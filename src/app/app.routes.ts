@@ -24,6 +24,10 @@ export const routes: Routes = [
         loadComponent:()=>import('./contact/contact.component').then(p=>p.ContactComponent)
     },
     {
+    path:'login',
+        loadComponent:()=>import('./login/login.component').then(p=>p.LoginComponent)
+    },
+    {
         path:'**',
         component:ErrorComponent
     }
