@@ -1,0 +1,53 @@
+ <div class="train-img">
+    <img src="https://png.pngtree.com/thumb_back/fw800/background/20220313/pngtree-new-railway-station-platform-image_1060569.jpg" alt="">
+ </div> 
+ <div class="book-now">
+    <p>Travel with us</p>
+    <input type="text" name="start" id="" placeholder="start">
+    <input type="destination" placeholder="destination">
+    <button>search</button>
+    <div class="date-picker-container">
+  <div class="date-field">
+    <label for="fromDate">From:</label>
+    <input
+      type="date"
+      id="fromDate"
+      name="fromDate"
+      [(ngModel)]="fromDate"
+      (change)="onFromDateChange()"
+    />
+  </div>
+
+  <div class="date-field">
+    <label for="toDate">To:</label>
+    <input
+      type="date"
+      id="toDate"
+      name="toDate"
+      [(ngModel)]="toDate"
+      [min]="fromDate"
+    />
+  </div>
+</div>
+
+ </div>
+ 
+ <!-- კალენდარი
+
+- <section class="hero">
+  <h1>Cheap Train Tickets & Timetables for Germany & Europe</h1>
+  <p>From €6.99 — flexible fares, easy booking.</p>
+  <a href="#" class="cta">Find best price</a>
+</section>
+
+<section class="card-section">
+  <div class="card">
+    <h2>Travel Flexibly</h2>
+    <p>Book now — change your plans anytime</p>
+  </div>
+  <div class="card">
+    <h2>Seat Reservation</h2>
+    <p>Reserve a seat directly during booking</p>
+  </div>
+  სხვა ბარათები -->
+<!-- </section> --> 

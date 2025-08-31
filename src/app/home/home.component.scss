@@ -1,0 +1,143 @@
+.train-img {
+  position: relative;   /* საჭიროა ნავბარის სწორად პოზიციონირებისთვის */
+//   width: 100%;
+//   height: 100vh;        /* სრულ ეკრანზე */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.train-img img {
+  width: 90%;
+  height: 45vh;
+  object-fit: cover; /* სურათი მთელ ეკრანს მოერგოს */
+  border-radius: 10px;
+}
+
+// .hero {
+//   text-align: center;
+//   padding: 80px 20px;
+//   background-color: #f5f5f5;
+// }
+
+// .hero h1 {
+//   font-size: 2.5rem;
+//   color: #222;
+//   margin-bottom: 20px;
+// }
+
+// .hero p {
+//   font-size: 1.125rem;
+//   color: #555;
+//   margin-bottom: 30px;
+// }
+
+// .hero .cta {
+//   display: inline-block;
+//   background-color: #0078D4;
+//   color: #fff;
+//   padding: 14px 28px;
+//   border-radius: 4px;
+//   text-decoration: none;
+//   font-size: 1rem;
+//   transition: background-color 0.2s;
+// }
+
+// .hero .cta:hover {
+//   background-color: #005ea6;
+// }
+
+// /* Content cards (მისი გამოყენება ბმულებისთვის / სექციებისთვის) */
+// .card-section {
+//   display: grid;
+//   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+//   gap: 24px;
+//   padding: 40px 20px;
+// }
+
+// .card {
+//   background: #fff;
+//   padding: 20px;
+//   border-radius: 6px;
+//   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+// }
+
+// .card h2 {
+//   font-size: 1.25rem;
+//   margin-bottom: 12px;
+//   color: #222;
+// }
+
+// .card p {
+//   font-size: 1rem;
+//   color: #555;
+// }
+.book-now{
+    width: 70%;
+    margin: auto;
+    background-color: #93b1b5b9;
+    height: 75vh;
+    padding-top: 40px;
+    border-radius: 20px;
+    box-shadow: 10px 10px 20px rgba($color: #000000, $alpha: 1.0);
+}
+.book-now p{
+  text-align: center;
+  font-size: 35px;
+  margin: 5px;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.book-now input{
+  width: 35%;
+  height: 35px;
+  margin: 20px;
+}
+.book-now button{
+  width: 12%;
+  height: 50px;
+  border: none;
+  font-size: 20px;
+  color: white;
+  background-color:#0B2E33;
+  border-radius: 2px;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  cursor: pointer;
+}
+.book-now button:hover{
+  background-color: #32656d;
+}
+
+.date-picker-container {
+  display: flex;
+  gap: 30px;
+  align-items: center;
+  justify-content: center;
+  margin-top: 50px;
+  font-family: Arial, sans-serif;
+}
+
+.date-field {
+  display: flex;
+  flex-direction: column;
+}
+
+.date-field label {
+  margin-bottom: 5px;
+  font-size: 16px;
+  color: #333;
+}
+
+.date-field input[type="date"] {
+  padding: 8px 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 16px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  transition: border-color 0.3s ease;
+}
+
+.date-field input[type="date"]:focus {
+  border-color: #0B2E33;
+  outline: none;
+}
