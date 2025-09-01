@@ -5,12 +5,23 @@
     <h2>Travel with us 🚇</h2>
     <p>You can buy your ticket online 🎫</p>
     <!-- <input type="text"  name="start" id="" placeholder="From〽️" > -->
-     <option value=""></option>
-    <input type="destination" placeholder="To📍">
-    <input type="text" placeholder="Passengers ">
+    <!-- <input type="destination" placeholder="To📍"> -->
+    <select class="selector" name="Destination" name="Destination">
+      <option value="">Station 〽️</option>
+      <option value=""*ngFor="let el of stationArr">{{el.name}}</option>
+    </select>
+    <select class="selector" name="Destination" name="Destination">
+      <option value="">Destination 📍</option>
+      <option value=""*ngFor="let el of departureArr">{{el.destination}}</option>
+    </select>
     <button class="check">Chek your tickets</button>
+    <div class="seat-map">
+    <div class="seat">
+      <input type="checkbox" id="seat1">
+      <label for="seat" >train</label>
+    </div>
     <button>search</button>
-    <div class="date-picker-container">
+    <!-- <div class="date-picker-container">
   <div class="date-field">
     <label for="fromDate">From:</label>
     <input
@@ -32,7 +43,7 @@
       [min]="fromDate"
     />
   </div>
-</div>
+</div> -->
 
  </div>
  
