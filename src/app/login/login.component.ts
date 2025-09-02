@@ -9,8 +9,8 @@ import { Component } from '@angular/core';
 export class LoginComponent {  
 
 
-  constructor() {}
-
-
+  logIn(){
+    localStorage.setItem('token', 'token');
+  }
   }
 

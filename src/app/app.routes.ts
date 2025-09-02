@@ -1,5 +1,6 @@
 import { Routes } from '@angular/router';
 import { ErrorComponent } from './error/error.component';
+import { authGuard } from './guards/auth.guard';
 
 export const routes: Routes = [
     {
@@ -13,7 +14,9 @@ export const routes: Routes = [
     },
         {
         path:'tickets',
-        loadComponent:()=>import('./tickets/tickets.component').then(p=>p.TicketsComponent)
+        loadComponent:()=>import('./tickets/tickets.component').
+        then(p=>p.TicketsComponent),
+        canActivate:[authGuard]
     },
         {
         path:'trips',
@@ -24,8 +27,10 @@ export const routes: Routes = [
         loadComponent:()=>import('./contact/contact.component').then(p=>p.ContactComponent)
     },
     {
-    path:'login',
-        loadComponent:()=>import('./login/login.component').then(p=>p.LoginComponent)
+        path:'login',
+        loadComponent:()=>import('./login/login.component')
+        .then(p=>p.LoginComponent),
+        
     },
     {
         path:'**',
