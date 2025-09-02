@@ -1,18 +1,20 @@
 .train-img {
-  position: relative;   /* საჭიროა ნავბარის სწორად პოზიციონირებისთვის */
-//   width: 100%;
-//   height: 100vh;        /* სრულ ეკრანზე */
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  position: relative; 
   overflow: hidden;
 }
 
 .train-img img {
-  width: 95%;
+  width: 100%;
   height: 45vh;
   object-fit: cover; /* სურათი მთელ ეკრანს მოერგოს */
   border-radius: 10px;
+  filter: brightness(70%);
+}
+.train-text{
+      position: absolute;
+      top: 10px; /* ზემოდან დაშორება */
+      // left: 5;
+      font-size: 50px;
 }
 
 // .hero {
@@ -74,10 +76,10 @@
 //   color: #555;
 // }
 .book-now{
-    width: 70%;
+    width: 90%;
     margin: auto;
     background-color: #93b1b5b9;
-    height: 75vh;
+    height: 25vh;
     padding-top: 40px;
     border-radius: 20px;
     box-shadow: 10px 10px 20px rgba($color: #000000, $alpha: 1.0);
@@ -102,8 +104,8 @@
 
 }
 .selector{
-  width: 45%;
-  height: 60px;
+  width: 20%;
+  height: 50px;
   margin: 20px;
   border: none;
   border-radius:5px ;
@@ -125,7 +127,7 @@
 }
 
 .book-now button{
-  width: 12%;
+  width: 20%;
   height: 50px;
   border: none;
   font-size: 20px;
@@ -134,62 +136,64 @@
   border-radius: 2px;
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   cursor: pointer;
-  margin: 45px;
+  margin: auto;
 }
 .book-now button:hover{
   background-color: #32656d;
 }
 
-mat-form-field{
-  width: 25%;
-  height: 20vh;
-  margin: 40px;
-  background-color: #B8E3E9;
-  border-radius: 5px;
-}
-
-.book-now .check{
-  width: 35%;
+.book-now input{
+  width: 10%;
   height: 50px;
-  font-size: 20px;
+  margin: 20px;
   border: none;
+  border-radius:5px ;
+  font-size: 20px;
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-  background-color: #0B2E33;
-  cursor: pointer;
-  margin: 25px;
+  background-color:  #B8E3E9;
 }
-.date-picker-container {
-  // display: flex;
-  // gap:10px;
-  flex-direction: column;
-  align-items: center;
-  // justify-content: center;
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
-}
+// .book-now .check{
+//   width: 35%;
+//   height: 50px;
+//   font-size: 20px;
+//   border: none;
+//   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+//   background-color: #0B2E33;
+//   cursor: pointer;
+//   margin: 25px;
+// }
+// .date-picker-container {
+//   // display: flex;
+//   // gap:10px;
+//   flex-direction: column;
+//   align-items: center;
+//   // justify-content: center;
+//   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+// }
 
-.date-field {
-  // display: flex;
-  flex-direction: column;
-}
+// .date-field {
+//   // display: flex;
+//   flex-direction: column;
+// }
 
-.date-field label {
-  margin-bottom: 5px;
-  font-size: 15px;
-  color: #333;
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-  padding: 10px;
-}
+// .date-field label {
+//   margin-bottom: 5px;
+//   font-size: 15px;
+//   color: #333;
+//   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+//   padding: 10px;
+// }
 
-.date-field input[type="date"] {
-  padding: 8px 12px;
-  border: 1px solid #ccc;
-  border-radius: 6px;
-  font-size: 15px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
-  transition: border-color 0.3s ease;
-}
+// .date-field input[type="date"] {
+//   padding: 8px 12px;
+//   border: 1px solid #ccc;
+//   border-radius: 6px;
+//   font-size: 15px;
+//   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+//   transition: border-color 0.3s ease;
+// }
 
-.date-field input[type="date"]:focus {
-  border-color: #0B2E33;
-  outline: none;
-}
+// .date-field input[type="date"]:focus {
+//   border-color: #0B2E33;
+//   outline: none;
+// }

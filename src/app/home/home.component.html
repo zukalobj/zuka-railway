@@ -1,28 +1,33 @@
  <div class="train-img">
     <img src="https://images.pexels.com/photos/253647/pexels-photo-253647.jpeg" alt="">
+    <div class="train-text">
+      <h2>Travel with us 🚇</h2>
+      <p>More than 100 years of work experience  </p>
+      <img src="" alt="">
+    </div> 
  </div> 
  <div class="book-now">
-    <h2>Travel with us 🚇</h2>
     <p>You can buy your ticket online 🎫</p>
     <!-- <input type="text"  name="start" id="" placeholder="From〽️" > -->
     <!-- <input type="destination" placeholder="To📍"> -->
        <!-- კალენდარი -->
-        <input type="date" [(ngModel)]="DateSelect">
-        <button (click)="dateSelection()">ok</button>
-        <select class="selector" name="Destination" name="Destination">
-      <option value="">Station 〽️</option>
+    <select class="selector" name="Destination" name="Destination">
+      <option value="">From <i class="fa-solid fa-location-crosshairs"></i></option>
       <option value=""*ngFor="let el of stationArr">{{el.name}}</option>
     </select>
     <select class="selector" name="Destination" name="Destination" >
-      <option value="">Destination 📍</option>
+      <option value="">To📍</option>
       <option value=""*ngFor="let el of departureArr">{{el.destination}}</option>
     </select>
-    <select class="selector" name="Destination" name="Destination">
+     <input type="date"  [(ngModel)]="DateSelect">
+    <!-- <select class="selector" name="Destination" name="Destination">
       <option value="">Date</option>
       <option value=""*ngFor="let el of departureArr">{{el.date}}</option>
-    </select>
-    <input type="text"  class="selector-inp" placeholder="Passengers">
-      </div>
+    </select> -->
+    <input type="text"   placeholder="Passengers">
+     <button (click)="dateSelection()">Search for trains</button>
+  </div>
+      
     <button>search</button>
     <!-- <div class="date-picker-container">
   <div class="date-field">
