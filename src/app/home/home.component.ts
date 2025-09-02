@@ -6,17 +6,25 @@ import { ApiService } from '../service/api.service';
 import{Departure}from '../models/departure'
 import{Station}from '../models/station'
 import { train  } from '../models/train';
+import { M } from "../../../node_modules/@angular/material/form-field.d-CMA_QQ0R";
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+// import { MatNativeDateModule } from '@angular/material/core';
+
 
 
 @Component({
   selector: 'app-home',
-  imports: [FormsModule,CommonModule],
+  imports: [FormsModule, CommonModule,MatFormFieldModule,MatInputModule,MatDatepickerModule],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
 })
+
 export class HomeComponent {
   fromDate: string = '';
   toDate: string = '';
+selectedDate: any;
   constructor(
     private easy:CommonfunctionService,
     private http :ApiService
@@ -24,6 +32,11 @@ export class HomeComponent {
   ngOnInit() {
   this.getDepartureData();
   this.getStationsData();
+}
+DateSelect:any;
+dateSelection(){
+  console.log("date selected by user is"+this.DateSelect)
+
 }
 
   getDepartureData(){
@@ -49,9 +62,10 @@ export class HomeComponent {
      console.log(this.stationArr)
     })
     }
-    stationArr:Station[]=[]
+    stationArr:Station[]=[] 
 
-  
+
+
  
 
 
