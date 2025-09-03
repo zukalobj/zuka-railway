@@ -1,4 +1,4 @@
-import { train } from "./train";
+import { Train } from "./train";
 
 
 export class Departure {
@@ -6,5 +6,5 @@ export class Departure {
     source!:string;
     destination!:string;
     date!:string;
-    trains!:train[]
+    trains!:Train[]
 }

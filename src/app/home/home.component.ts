@@ -5,11 +5,8 @@ import { CommonfunctionService } from '../service/commonfunction.service';
 import { ApiService } from '../service/api.service';
 import{Departure}from '../models/departure'
 import{Station}from '../models/station'
-import { train  } from '../models/train';
+import { Train} from '../models/train';
 import { M } from "../../../node_modules/@angular/material/form-field.d-CMA_QQ0R";
-// import { MatNativeDateModule } from '@angular/material/core';
-
-
 
 @Component({
   selector: 'app-home',
@@ -21,34 +18,34 @@ import { M } from "../../../node_modules/@angular/material/form-field.d-CMA_QQ0R
 export class HomeComponent {
   fromDate: string = '';
   toDate: string = '';
-selectedDate: any;
+  selectedDate: any;
   constructor(
     private easy:CommonfunctionService,
     private http :ApiService
   ) {}
   ngOnInit() {
-  this.getDepartureData();
   this.getStationsData();
 }
+from!:string;
+to!:string;
 
-
-DateSelect:any;
-dateSelection(){
-  console.log("date selected by user is"+this.DateSelect);
+getTrains(){
+  this.http.getData(`https://railway.stepprojects.ge/api/getdeparture?from=${this.from}&to=${this.to}&date=${this.dateSelect}`)
+  .subscribe((resp : any)=>{
+    console.log(resp)
+    this.trainArr=resp
+    console.log(this.trainArr)
+  })
 }
 
-  getDepartureData(){
-    this.easy.getInfo()
-    this.http.getData("https://railway.stepprojects.ge/api/departures")
-    .subscribe((resp : any)=>{
-     console.log(resp)
-     this.departureArr=resp
-     console.log(this.departureArr)
-    })
-    }
-  
+dateSelect:any;
+dateSelection(){
+  console.log("date selected by user is"+this.dateSelect);
+  this.getTrains()
+}
 
-  departureArr:Departure[]=[] 
+
+  
 
   // station
   getStationsData(){
@@ -60,7 +57,11 @@ dateSelection(){
      console.log(this.stationArr)
     })
     }
+
+
     stationArr:Station[]=[] 
+    
+    trainArr:Departure[]=[]
 
 
 
@@ -68,13 +69,3 @@ dateSelection(){
 
 
  }
-
-
-
-
-//   onFromDateChange() {
-//     if (this.toDate && this.toDate < this.fromDate) {
-//       this.toDate = '';
-// }
-//   }
-// }

@@ -1,6 +1,6 @@
 
 
-export class train{
+export class Train{
     id!:number;
     number!: number;
     name!: string;
@@ -10,5 +10,8 @@ export class train{
     departure!: string;
     arrive!: string;
     departureId!: number;
+    time: any;
+    price: any;
+    vagons: any;
     
 }

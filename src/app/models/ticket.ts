@@ -1,4 +1,4 @@
-import { train } from "./train";
+import { Train } from "./train";
 
 export class Ticket{
      id!:string;
@@ -8,5 +8,5 @@ export class Ticket{
     ticketPrice!: number;
     trainID: number | undefined;
     confirmed!: boolean;
-    train!: train[];
+    train!: Train[];
 }
