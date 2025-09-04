@@ -19,67 +19,8 @@
       font-family: 'Segoe UI', sans-serif;
       font-weight: bold;
 }
-
-// .hero {
-//   text-align: center;
-//   padding: 80px 20px;
-//   background-color: #f5f5f5;
-// }
-
-// .hero h1 {
-//   font-size: 2.5rem;
-//   color: #222;
-//   margin-bottom: 20px;
-// }
-
-// .hero p {
-//   font-size: 1.125rem;
-//   color: #555;
-//   margin-bottom: 30px;
-// }
-
-// .hero .cta {
-//   display: inline-block;
-//   background-color: #0078D4;
-//   color: #fff;
-//   padding: 14px 28px;
-//   border-radius: 4px;
-//   text-decoration: none;
-//   font-size: 1rem;
-//   transition: background-color 0.2s;
-// }
-
-// .hero .cta:hover {
-//   background-color: #005ea6;
-// }
-
-// /* Content cards (მისი გამოყენება ბმულებისთვის / სექციებისთვის) */
-// .card-section {
-//   display: grid;
-//   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-//   gap: 24px;
-//   padding: 40px 20px;
-// }
-
-// .card {
-//   background: #fff;
-//   padding: 20px;
-//   border-radius: 6px;
-//   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
-// }
-
-// .card h2 {
-//   font-size: 1.25rem;
-//   margin-bottom: 12px;
-//   color: #222;
-// }
-
-// .card p {
-//   font-size: 1rem;
-//   color: #555;
-// }
 .book-now{
-    width: 98%;
+    width: 100%;
     margin: auto;
     background: linear-gradient(to right, #4B6CB7, #182848);
     height: 25vh;
@@ -116,7 +57,7 @@
   font-size: 20px;
   appearance: none;
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-  background: linear-gradient(to right, #2C3E50, #4CA1AF);
+  background:white;
   
 
   
@@ -129,7 +70,7 @@
   border-radius:5px ;
   font-size: 20px;
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
- background: linear-gradient(to right, #2C3E50, #4CA1AF);
+  background:white
  
 }
 
@@ -159,11 +100,11 @@
   border-radius:5px ;
   font-size: 20px;
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-  background: linear-gradient(to right, #2C3E50, #4CA1AF);
+  background:white
 }
 .book-now input::placeholder{
   padding: 10px;
-  color: white;
+  color: rgb(0, 0, 0);
 }
 .accordion{
   width: 98%;
