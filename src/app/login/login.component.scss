@@ -1,96 +1,215 @@
-// :root{
-//   --bg:#0c1116;
-//   --text:#e8edf2;
-//   --muted:#9aa6b2;
-//   --success:#2ecc71;
-//   --danger:#ff3b30;
+// body {
+//   margin: 0;
+//   padding: 0;
+//   font-family: 'Rajdhani', sans-serif;
+//   background: linear-gradient(#111, #222);
+//   height: 100vh;
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
 // }
 
-// .page{
-//   display:flex;
-//   gap:24px;
-//   align-items:center;
-//   padding:22px;
-//   max-width:980px;
-//   margin:40px auto;
-//   color:var(--text);
-//   font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Noto Sans", Arial;
+// /* Wrapper */
+// .main-img{
+//     display: flex;
+//     flex-direction: row;
+// }
+// .main-img img{
+//     width: 35%;
+// }
+// .login-wrapper {
+//   position: relative;
+//   width: 400px;
+//   padding: 40px;
+//   margin: auto;
+//   background: #1e1e1e;
+//   border-radius: 12px;
+//   box-shadow: 0 0 30px rgba(0, 255, 0, 0.1);
+//   color: white;
 // }
 
-// /* Card */
-// .card{
-//   width:420px;
-//   background:linear-gradient(180deg,#0f151c,#0b0f14);
-//   border-radius:14px;
-//   padding:20px;
-//   box-shadow: 0 10px 30px rgba(0,0,0,.45);
+// /* Signal Light */
+// .signal {
+//   position: absolute;
+//   top: -12px;
+//   left: 50%;
+//   transform: translateX(-50%);
+//   width: 22px;
+//   height: 22px;
+//   background: #4caf50;
+//   border-radius: 50%;
+//   box-shadow: 0 0 12px #4caf50;
+//   transition: background 0.4s ease, box-shadow 0.4s ease;
 // }
-// .card h1{ margin:0 0 6px; font-size:20px; }
-// .hint{ color:var(--muted); font-size:13px; margin-bottom:12px }
+// .signal.error {
+//   background: #ff5252;
+//   box-shadow: 0 0 16px #ff5252, 0 0 32px #ff1744;
+// }
 
-// .form label{
-//   display:block;
-//   font-size:13px;
-//   color:#c8d2dc;
-//   margin-bottom:10px;
+// /* Title */
+// .title {
+//   text-align: center;
+//   margin-bottom: 30px;
+//   font-size: 22px;
+//   letter-spacing: 1px;
 // }
-// .form input{
-//   width:100%;
-//   padding:10px 12px;
-//   border-radius:10px;
-//   border:1px solid #253240;
-//   background:#061018;
-//   color:var(--text);
-//   margin-top:6px;
-//   outline:none;
-// }
-// .btn{
-//   margin-top:12px;
-//   width:100%;
-//   padding:10px 12px;
-//   border-radius:10px;
-//   border:0;
-//   background:#3b82f6;
-//   color:white;
-//   font-weight:600;
-//   cursor:pointer;
-// }
-// .msg{ margin-top:10px; min-height:18px; font-size:13px }
-// .msg.error{ color:var(--danger) }
-// .msg.success{ color:var(--success) }
 
-// /* signal */
-// .signal-wrap{
-//   display:flex;
-//   flex-direction:column;
-//   align-items:center;
-//   gap:12px;
+// /* Inputs */
+// .input-group {
+//   margin-bottom: 20px;
 // }
-// .mast{
-//   width:14px; height:140px; background:#202a35; border-radius:8px;
+// .input-group label {
+//   display: block;
+//   margin-bottom: 5px;
+//   font-size: 14px;
+//   color: #bbb;
 // }
-// .head{
-//   width:150px; height:230px; padding:14px;
-//   background: linear-gradient(180deg,#161f28,#0e151c);
-//   border-radius:18px; border:1px solid #263340; display:grid; gap:14px; grid-template-rows: 1fr 1fr;
-//   position:relative;
+// .input-group input {
+//   width: 100%;
+//   padding: 12px;
+//   background: #2b2b2b;
+//   border: 1px solid #444;
+//   border-radius: 6px;
+//   color: white;
+//   font-size: 15px;
+//   transition: border 0.3s ease;
 // }
-// .visor{ position:absolute; left:10px; right:10px; height:18px; background:#0b1117; top:-8px; border-radius:999px }
-// .lamp{ display:grid; place-items:center; border-radius:50%; }
-// .led{ width:84px; height:84px; border-radius:50%; opacity:.25; transition: all .35s ease; }
-// .led.red{ background:#b3261e }
-// .led.green{ background:#2e7d32 }
+// .input-group input:focus {
+//   border-color: #66bb6a;
+//   outline: none;
+// }
 
-// /* ON states via attribute */
-// .head[data-state="red"] .led.red{
-//   opacity:1;
-//   box-shadow: 0 0 20px 2px rgba(255,59,48,.55), 0 0 120px 20px rgba(255,59,48,.12) inset;
-//   background: radial-gradient(80px 80px at 48% 42%, #ff4d43, #ff3b30 60%, #b3261e 100%);
+// /* Button */
+// .login-btn {
+//   width: 100%;
+//   padding: 12px;
+//   background: #2979ff;
+//   border: none;
+//   border-radius: 6px;
+//   font-size: 16px;
+//   color: white;
+//   cursor: pointer;
+//   transition: background 0.3s ease;
 // }
-// .head[data-state="green"] .led.green{
-//   opacity:1;
-//   box-shadow: 0 0 20px 2px rgba(46,204,113,.55), 0 0 120px 20px rgba(46,204,113,.12) inset;
-//   background: radial-gradient(80px 80px at 48% 42%, #64ffa1, #2ecc71 60%, #2e7d32 100%);
+// .login-btn:hover {
+//   background: #1565c0;
 // }
-// .plate{ margin-top:-6px; padding:6px 10px; border-radius:8px; background:#0d141b; border:1px solid #223041; color:#9fb0c2; font-size:12px }
-// @media (max-width:880px){ .page{ flex-direction:column; align-items:stretch } .card{ width:100% } }
+
+// /* Error Message */
+// .error-text {
+//   margin-top: 15px;
+//   color: #ff5252;
+//   text-align: center;
+//   font-size: 14px;
+// }
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Rajdhani', sans-serif;
+  background: linear-gradient(#0c0c0c, #1e1e1e);
+  background-image: url('https://d1l57x9nwbbkz.cloudfront.net/files/s3fs-public/styles/article_masthead/public/2025-08/agawa-canyon-tour-train-sault-ste-marie-fall-colour.jpg.webp?VersionId=U3SQIwze.Rvs5NE0k70oeTjaEhhAT1lK&itok=iGJU7rvo'); 
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Wrapper */
+.login-wrapper {
+  position: relative;
+  width: 380px;
+  padding: 40px;
+  margin: auto;
+  background: rgba(25, 25, 25, 0.92);
+  border-radius: 12px;
+  box-shadow: 0 0 30px rgba(0, 255, 0, 0.06);
+  color: white;
+  backdrop-filter: blur(4px);
+}
+
+/* Signal Light */
+.signal {
+  position: absolute;
+  top: -14px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 22px;
+  height: 22px;
+  background: #4caf50;
+  border-radius: 50%;
+  box-shadow: 0 0 12px #4caf50;
+  transition: background 0.4s ease, box-shadow 0.4s ease;
+}
+
+/* 🔴 ციმციმა თუ შეცდომაა */
+.signal.error {
+  background: #ff1744;
+  box-shadow: 0 0 12px #ff5252, 0 0 20px #ff5252;
+  animation: blink-red 1s infinite;
+}
+
+@keyframes blink-red {
+  0% { opacity: 1; }
+  50% { opacity: 0.4; }
+  100% { opacity: 1; }
+}
+
+/* Title */
+.title {
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 22px;
+  letter-spacing: 1px;
+}
+
+/* Inputs */
+.input-group {
+  margin-bottom: 20px;
+}
+.input-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-size: 14px;
+  color: #bbb;
+}
+.input-group input {
+  width: 100%;
+  padding: 12px;
+  background: #2c2c2c;
+  border: 1px solid #444;
+  border-radius: 6px;
+  color: white;
+  font-size: 15px;
+  transition: border 0.3s ease;
+}
+.input-group input:focus {
+  border-color: #66bb6a;
+  outline: none;
+}
+
+/* Button */
+.login-btn {
+  width: 100%;
+  padding: 12px;
+   background: linear-gradient(to right, #4B6CB7, #182848);
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  color: white;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+.login-btn:hover {
+  background: #1565c0;
+}
+
+/* Error Message */
+.error-text {
+  margin-top: 15px;
+  color: #ff5252;
+  text-align: center;
+  font-size: 14px;
+}

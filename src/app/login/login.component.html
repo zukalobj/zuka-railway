@@ -1,4 +1,32 @@
-<input type="username" placeholder="Username" />
-<button  (click)="logIn()">logIn</button>
-<input type="password" placeholder="password" />
-<input type="Email" placeholder="Email" />
+<!-- <div class="main-img">
+    <img src="https://media.istockphoto.com/id/538562985/photo/passenger-on-platforms-at-the-railway-station-of-jaipur.jpg?s=612x612&w=0&k=20&c=6zcVTV0rGUUbebqw4hkYPdEoMDHXz7AQfuyU7wvbFCU=" alt="">
+    <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/2d/00/46/c2/caption.jpg?w=900&h=500&s=1" alt="">
+    <img src="https://d1l57x9nwbbkz.cloudfront.net/files/s3fs-public/styles/article_masthead/public/2025-08/agawa-canyon-tour-train-sault-ste-marie-fall-colour.jpg.webp?VersionId=U3SQIwze.Rvs5NE0k70oeTjaEhhAT1lK&itok=iGJU7rvo" alt=""> -->
+<!-- </div> -->
+    <div class="login-wrapper">
+  <!-- Signal Light -->
+  <div class="signal" [ngClass]="{ 'error': loginFailed }"></div>
+
+  <!-- Login Form -->
+  <form [formGroup]="loginForm" (ngSubmit)="onLogin()" class="login-box">
+    <h1 class="title">მატარებლის სისტემაში შესვლა</h1>
+
+    <div class="input-group">
+      <label>მომხმარებელი</label>
+      <input type="text" formControlName="username" placeholder="მაგ. admin" />
+    </div>
+
+    <div class="input-group">
+      <label>პაროლი</label>
+      <input type="password" formControlName="password" placeholder="••••••••" />
+    </div>
+
+    <button type="submit" class="login-btn">შესვლა</button>
+
+    <div class="error-text" *ngIf="loginFailed">
+      ❌ ავტორიზაცია ვერ მოხერხდა
+    </div>
+  </form>
+</div>
+
+
