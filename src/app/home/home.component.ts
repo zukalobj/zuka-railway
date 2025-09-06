@@ -7,11 +7,11 @@ import{Departure}from '../models/departure'
 import{Station}from '../models/station'
 import { Train} from '../models/train';
 import { M } from "../../../node_modules/@angular/material/form-field.d-CMA_QQ0R";
-import { RouterLink } from "../../../node_modules/@angular/router/router_module.d-Bx9ArA6K";
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-home',
-  imports: [FormsModule, CommonModule, ],
+  imports: [FormsModule, CommonModule, RouterModule],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
 })
