@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, signal } from '@angular/core';
+import { TripsComponent } from '../../trips/trips.component';
 
 @Component({
   selector: 'app-signals',
@@ -6,6 +7,5 @@ import { Component } from '@angular/core';
   templateUrl: './signals.component.html',
   styleUrl: './signals.component.scss'
 })
-export class SignalsComponent {
-
+export class SignalsComponent {;
 }

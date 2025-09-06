@@ -20,10 +20,11 @@
       font-weight: bold;
 }
 .book-now{
-    width: 100%;
+    width: 80%;
     margin: auto;
     background: linear-gradient(to right, #4B6CB7, #182848);
     height: 25vh;
+    right: 70;
     padding-top: 40px;
     border-radius: 20px;
     box-shadow: 10px 10px 20px rgba($color: #000000, $alpha: 1.0);
@@ -111,3 +112,6 @@
   margin: auto;
 
 }
+
+
+

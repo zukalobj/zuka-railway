@@ -1,4 +1,4 @@
- <div class="nav-bar">
+ <!-- <div class="nav-bar">
     <nav class="left">
         <a href="">IT BAHN 🚇</a>
         <a routerLink="/home" routerLinkActive="active">Home</a>
@@ -9,4 +9,37 @@
     </nav>
        
 </div>
- 
+  -->
+
+  <!-- გახსნის ღილაკი -->
+<div class="sidebar" [class.open]="isOpen">
+  <!-- 1. მენიუს ღილაკი -->
+  <div class="menu-item toggle" (click)="toggleSidebar()">
+    <i class="fas fa-bars" ></i>
+    <span *ngIf="isOpen">მენიუ</span>
+  </div>
+
+  <!-- 2. გამგზავრება -->
+  <a class="menu-item" href="#">
+     <a routerLink="/home"routerLinkActive="active"><i class="fas fa-train"></i></a>
+    <span *ngIf="isOpen">გამგზავრება</span>
+  </a>
+
+  <!-- 3. შესვლა -->
+  <a class="menu-item" href="#">
+    <a routerLink="/login"routerLinkActive="active"><i class="fas fa-sign-in-alt"></i></a>
+    <span *ngIf="isOpen">შესვლა</span>
+  </a>
+
+  <!-- 4. რეგისტრაცია -->
+  <a class="menu-item" href="#">
+    <a routerLink="/tickets"routerLinkActive="active"><i class="fas fa-user-plus"></i></a>
+    <span *ngIf="isOpen">რეგისტრაცია</span>
+  </a>
+
+  <!-- 5. სეტინგები -->
+  <a class="menu-item" href="#">
+     <a routerLink="/trips"routerLinkActive="active"> <i class="fas fa-cog"></i></a>
+    <span *ngIf="isOpen">პარამეტრები</span>
+  </a>
+</div>

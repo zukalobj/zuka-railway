@@ -1,30 +1,98 @@
-  .nav-bar {
-    display: flex;
-    justify-content:space-between;
-    gap: 30px;
-    align-items: center;
-    background: linear-gradient(to right, #6A82FB, #120709);
-    padding: 10px 20px;
-    height: 10vh;
-    width: 100%;
-    margin: auto;
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
-    border-radius: 10px;
+  // .nav-bar {
+  //   display: flex;
+  //   justify-content:space-between;
+  //   gap: 30px;
+  //   align-items: center;
+  //   background: linear-gradient(to right, #6A82FB, #120709);
+  //   padding: 10px 20px;
+  //   height: 10vh;
+  //   width: 100%;
+  //   margin: auto;
+  //   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  //   border-radius: 10px;
+  // }
+  // .nav-bar nav {
+  //   display: flex;
+  //   gap: 80px; 
+  // }
+  // .nav-bar nav a {
+  //   color: white;
+  //   text-decoration: none;
+  //   font-size: 25px;
+  //   transition: color 0.3s ease;
+  //   cursor: pointer;
+  // }
+  // .nav-bar nav a:hover {
+  //   color: #B8E3E9; 
+  // }
+  // .nav-bar nav a.active {
+  //   border-bottom: 2px solid #B8E3E9;
+  // };
+/* ძირითადი sidebar */
+.sidebar {
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 60px;
+  background-color: #1f2937;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  transition: width 0.3s ease;
+  overflow: hidden;
+  z-index: 1000;
+}
+
+/* როცა ღიაა */
+.sidebar.open {
+  width: 220px;
+}
+
+/* თითო ელემენტი — ვაგონი */
+.menu-item {
+  display: flex;
+  align-items: center;
+  padding: 15px 20px;
+  gap: 15px;
+  color: #f3f4f6;
+  text-decoration: none;
+  font-size: 16px;
+  border-bottom: 1px solid #374151;
+  transition: background 0.2s;
+}
+
+.menu-item:hover {
+  background-color: #374151;
+  color: #fbbf24;
+  cursor: pointer;
+}
+
+.menu-item i {
+  font-size: 18px;
+  width: 24px;
+  text-align: center;
+}
+
+/* ღილაკისთვის სტილი */
+.menu-item.toggle {
+  background-color: #111827;
+  border-bottom: 2px solid #4b5563;
+}
+
+/* ტექსტი — როცა sidebar დახურულია, span იმალება Angular-ში */
+.menu-item span {
+  white-space: nowrap;
+}
+
+/* მობილურზე */
+@media (max-width: 768px) {
+  .sidebar {
+    width: 0;
   }
-  .nav-bar nav {
-    display: flex;
-    gap: 80px; 
+
+  .sidebar.open {
+    width: 200px;
   }
-  .nav-bar nav a {
-    color: white;
-    text-decoration: none;
-    font-size: 25px;
-    transition: color 0.3s ease;
-    cursor: pointer;
-  }
-  .nav-bar nav a:hover {
-    color: #B8E3E9; 
-  }
-  .nav-bar nav a.active {
-    border-bottom: 2px solid #B8E3E9;
-  };
+}
+
