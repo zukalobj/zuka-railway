@@ -1,17 +1,17 @@
 
-body {
-  margin: 0;
-  padding: 0;
-  font-family: 'Rajdhani', sans-serif;
-  background: linear-gradient(#0c0c0c, #1e1e1e);
-  background-image: url('https://d1l57x9nwbbkz.cloudfront.net/files/s3fs-public/styles/article_masthead/public/2025-08/agawa-canyon-tour-train-sault-ste-marie-fall-colour.jpg.webp?VersionId=U3SQIwze.Rvs5NE0k70oeTjaEhhAT1lK&itok=iGJU7rvo'); 
-  background-size: cover;
-  background-position: center;
-  // height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
+// body {
+//   margin: 0;
+//   padding: 0;
+//   font-family: 'Rajdhani', sans-serif;
+//   background: linear-gradient(#0c0c0c, #1e1e1e);
+//   background-image: url('https://d1l57x9nwbbkz.cloudfront.net/files/s3fs-public/styles/article_masthead/public/2025-08/agawa-canyon-tour-train-sault-ste-marie-fall-colour.jpg.webp?VersionId=U3SQIwze.Rvs5NE0k70oeTjaEhhAT1lK&itok=iGJU7rvo'); 
+//   background-size: cover;
+//   background-position: center;
+//   // height: 100vh;
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+// }
 
 /* Wrapper */
 .login-wrapper {
@@ -108,4 +108,34 @@ body {
   color: #ff5252;
   text-align: center;
   font-size: 14px;
+}
+@media screen and (max-width: 480px) {
+  .login-wrapper {
+    width: 90%;
+    padding: 30px 20px;
+  }
+
+  .title {
+    font-size: 18px;
+  }
+
+  .input-group input {
+    padding: 10px;
+    font-size: 14px;
+  }
+
+  .login-btn {
+    padding: 10px;
+    font-size: 15px;
+  }
+
+  .error-text {
+    font-size: 13px;
+  }
+
+  .signal {
+    width: 18px;
+    height: 18px;
+    top: -10px;
+  }
 }
