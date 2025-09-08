@@ -68,7 +68,11 @@ seats: any;
        console.log(this.stationArr)
       })
       }
-  // vagon
+      getVagons(){
+        
+
+      }
+  
      openVagon(trainId: number) {
         this.easy.getInfo()
         this.http.getData(`https://railway.stepprojects.ge/api/getvagon/${trainId}`)

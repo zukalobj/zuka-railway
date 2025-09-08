@@ -32,6 +32,12 @@ export const routes: Routes = [
         .then(p=>p.LoginComponent),
         
     },
+       {
+        path:'register',
+        loadComponent:()=>import('./register/register.component')
+        .then(p=>p.RegisterComponent),
+        
+    },
     {
         path:'**',
         component:ErrorComponent

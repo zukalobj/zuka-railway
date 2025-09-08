@@ -1,0 +1,39 @@
+
+
+<!-- train-registration.component.html -->
+<div class="background">
+  <div class="registration-wrapper">
+    
+<div class="promo-box">
+  <h3>რატომ უნდა დარეგისტრირდე?</h3>
+  <ul>
+    <li><i class="fas fa-ticket-alt"></i> უფასო პირველი მგზავრობა</li>
+    <li><i class="fas fa-percent"></i> ფასდაკლებები ყოველ კვირა</li>
+    <li><i class="fas fa-star"></i> პრიორიტეტული ბილეთები</li>
+    <li><i class="fas fa-gift"></i> სპეციალური აქციები მხოლოდ წევრებისთვის</li>
+  </ul>
+</div>
+
+    <!-- რეგისტრაციის ბლოკი -->
+    <div class="registration-box">
+      <div class="traffic-light" [ngClass]="trafficLightState">
+        <span class="light red"></span>
+        <span class="light yellow"></span>
+        <span class="light green"></span>
+      </div>
+
+      <form (ngSubmit)="register()" #registerForm="ngForm" class="form-content">
+        <h2>მგზავრის რეგისტრაცია</h2>
+
+        <input type="text" name="username" [(ngModel)]="form.username" required placeholder="მომხმარებლის სახელი">
+        <input type="email" name="email" [(ngModel)]="form.email" required placeholder="ელ. ფოსტა">
+        <input type="password" name="password" [(ngModel)]="form.password" required placeholder="პაროლი">
+
+        <button type="submit" [disabled]="loading">დარეგისტრირდი</button>
+      </form>
+
+      <div class="message" *ngIf="message">{{ message }}</div>
+    </div>
+    
+  </div>
+</div>

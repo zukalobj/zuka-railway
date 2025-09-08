@@ -42,6 +42,10 @@
 </a>
 
 <a class="menu-item" routerLink="/tickets" routerLinkActive="active">
+  <i class="fa-solid fa-ticket"></i>
+  <span *ngIf="isOpen">რეგისტრაცია</span>
+</a>
+<a class="menu-item" routerLink="/register" routerLinkActive="active">
   <i class="fas fa-user-plus"></i>
   <span *ngIf="isOpen">რეგისტრაცია</span>
 </a>
