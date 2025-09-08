@@ -1,34 +1,4 @@
-  // .nav-bar {
-  //   display: flex;
-  //   justify-content:space-between;
-  //   gap: 30px;
-  //   align-items: center;
-  //   background: linear-gradient(to right, #6A82FB, #120709);
-  //   padding: 10px 20px;
-  //   height: 10vh;
-  //   width: 100%;
-  //   margin: auto;
-  //   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
-  //   border-radius: 10px;
-  // }
-  // .nav-bar nav {
-  //   display: flex;
-  //   gap: 80px; 
-  // }
-  // .nav-bar nav a {
-  //   color: white;
-  //   text-decoration: none;
-  //   font-size: 25px;
-  //   transition: color 0.3s ease;
-  //   cursor: pointer;
-  // }
-  // .nav-bar nav a:hover {
-  //   color: #B8E3E9; 
-  // }
-  // .nav-bar nav a.active {
-  //   border-bottom: 2px solid #B8E3E9;
-  // };
-/* ძირითადი sidebar */
+
 .sidebar {
   position: fixed;
   left: 0;
@@ -44,12 +14,11 @@
   z-index: 1000;
 }
 
-/* როცა ღიაა */
 .sidebar.open {
   width: 220px;
 }
 
-/* თითო ელემენტი — ვაგონი */
+
 .menu-item {
   display: flex;
   align-items: center;
@@ -74,25 +43,62 @@
   text-align: center;
 }
 
-/* ღილაკისთვის სტილი */
+
 .menu-item.toggle {
   background-color: #111827;
   border-bottom: 2px solid #4b5563;
 }
 
-/* ტექსტი — როცა sidebar დახურულია, span იმალება Angular-ში */
+
 .menu-item span {
   white-space: nowrap;
 }
+.menu-item.active {
+  background-color: #374151;
+  color: #2567f5;
+}
 
-/* მობილურზე */
+
+
 @media (max-width: 768px) {
   .sidebar {
-    width: 0;
+    position: fixed;
+    top: 0;
+    left: -220px; 
+    width: 200px;
+    height: 100%;
+    transition: left 0.3s ease;
+    z-index: 2000;
+    box-shadow: 2px 0 8px rgba(0, 0, 0, 0.5);
   }
 
   .sidebar.open {
-    width: 200px;
+    left: 0; 
+  }
+
+  .sidebar-toggle-btn {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    background-color: #1f2937;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    z-index: 3000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+ 
+  .main-content {
+    margin-left: 0;
+    transition: margin-left 0.3s ease;
+  }
+
+  .sidebar.open ~ .main-content {
+    margin-left: 200px;
   }
 }
-

@@ -7,6 +7,9 @@ import { CommonfunctionService } from '../service/commonfunction.service';
 import { Station } from '../models/station';
 import { Departure } from '../models/departure';
 import { FormsModule } from '@angular/forms';
+import { Vagon } from '../models/vagon';
+import { Seat } from '../models/seat';
+import { Train } from '../models/train';
 
 @Component({
   selector: 'app-trips',
@@ -19,15 +22,23 @@ export class TripsComponent {
     fromDate: string = '';
     toDate: string = '';
     selectedDate: any;
+    selectedSeat: Seat | null = null;
+    showSeat: boolean = false;
+vagons: any;
+seats: any;
     constructor(
       private easy:CommonfunctionService,
       private http :ApiService
     ) {}
     ngOnInit() {
     this.getStationsData();
+    this.getTrains();
+    this.openVagon;
+    this.openSeat;
   }
   from!:string;
   to!:string;
+  vagonId!:number;
   
   getTrains(){
     this.http.getData(`https://railway.stepprojects.ge/api/getdeparture?from=${this.from}&to=${this.to}&date=${this.dateSelect}`)
@@ -57,24 +68,58 @@ export class TripsComponent {
        console.log(this.stationArr)
       })
       }
-  
+  // vagon
+     openVagon(trainId: number) {
+        this.easy.getInfo()
+        this.http.getData(`https://railway.stepprojects.ge/api/getvagon/${trainId}`)
+        .subscribe((resp :any) => {
+        console.log(resp)
+        this.vagonArr = resp
+        console.log(this.vagonArr)
+      });
+    }
+    openSeat(vagonId: number){
+       this.easy.getInfo()
+       this.http.getData(`https://railway.stepprojects.ge/api/getseat/${vagonId}`)
+       .subscribe((resp :any) => {
+        console.log(resp)
+        this.seatArr = resp
+        console.log(this.seatArr)
+
+    });
+  }
   
   
   
       stationArr:Station[]=[] 
-      
       trainArr:Departure[]=[]
+      vagonArr:Vagon[]=[]
+      seatArr:Seat[]=[]
   
   
-  renderVagon(){
-    
-  }
       
    
   
-  
-   }
-  
+
+    selectSeat(seat: Seat) {
+    if (seat.isOccupied) {
+      alert('ეს ადგილი დაკავებულია, გთხოვთ აირჩიოთ სხვა');
+      return;
+    }
+    this.selectedSeat = seat;
+    this.showSeat = false;
+  }
+
+  closeSeat() {
+    this.showSeat = false;
+  }
+}
+
+  //  }
+  // vagonArr(vagonArr: any) {
+  //   throw new Error('Method not implemented.');
+  // }
+
   //  isOpen = false;
 
   // toggleSidebar() {

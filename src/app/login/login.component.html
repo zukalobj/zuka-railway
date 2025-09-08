@@ -1,5 +1,5 @@
-
-    <div class="login-wrapper">
+<div class="main">
+      <div class="login-wrapper">
   <!-- Signal Light -->
   <div class="signal" [ngClass]="{ 'error': loginFailed }"></div>
 
@@ -18,11 +18,15 @@
     </div>
 
     <button type="submit" class="login-btn">შესვლა</button>
+    
 
     <div class="error-text" *ngIf="loginFailed">
       ❌ ავტორიზაცია ვერ მოხერხდა
+      
     </div>
   </form>
 </div>
+</div>
+
 
 
