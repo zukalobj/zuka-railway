@@ -39,6 +39,12 @@ export const routes: Routes = [
         
     },
     {
+        path:'wagon',
+        loadComponent:()=>import('./wagon/wagon.component')
+        .then(p=>p.WagonComponent),
+        
+    },
+    {
         path:'**',
         component:ErrorComponent
     }

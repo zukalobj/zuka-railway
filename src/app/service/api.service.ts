@@ -15,9 +15,15 @@ export class ApiService {
     catchError(this.errorHandling)
   )
   }
-
-  private errorHandling(error:HttpErrorResponse){
-    return throwError(()=>Error("Unable to connet to server"))
+    postData(url: string, obj: any) {
+    return this.http.post(url, obj).pipe(catchError(this.errorHandling));
   }
 
+  private errorHandling(err: HttpErrorResponse) {
+    return throwError(() => {
+      Error('somethong went werog, try later');
+      // alert("somethong went werog, try later")
+    });
+  
+}
 }

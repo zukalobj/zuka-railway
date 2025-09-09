@@ -63,30 +63,8 @@
     </h2>
     <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
       <div class="accordion-body">
-         <strong *ngFor="let vagon of trainArr[0].trains[2]?.vagons">{{vagon.name}} <button (click)="openSeat(vagon.Id)">ვაგონის არჩევა</button></strong><br>
+         <strong *ngFor="let vagon of trainArr[0].trains[2]?.vagons">{{vagon.name}} <button>ვაგონის არჩევა</button></strong><br>
     </div>
   </div>
 </div>
-<!-- <div *ngFor="let vagon of vagons" class="vagon-item">
-  <span>{{ vagon.name }}</span>
-  <button (click)="openSeat(vagon.id)">ვაგონის არჩევა</button>
-</div>
 
-<div class="modal-backdrop" *ngIf="showSeat" (click)="closeSeat()"></div>
-<div class="modal" *ngIf="selectSeat">
-  <h3>სითების არჩევა</h3>
-  <div class="seats-container">
-    <button *ngFor="let seat of seats" 
-            [disabled]="seat.isOccupied"
-            (click)="selectSeat(seat)"
-            [class.occupied]="seat.isOccupied">
-      {{ seat.number }}
-    </button>
-  </div>
-  <button class="close-btn" (click)="closeSeat()">დახურვა</button>
-</div>
-
-
-<div *ngIf="selectedSeat" class="selected-seat">
-  არჩეული ადგილი: {{ selectedSeat.number }} | ფასი: {{ selectedSeat.price }} ₾
-</div> -->

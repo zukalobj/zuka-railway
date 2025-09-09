@@ -24,8 +24,8 @@ export class TripsComponent {
     selectedDate: any;
     selectedSeat: Seat | null = null;
     showSeat: boolean = false;
-vagons: any;
-seats: any;
+    vagons: any;
+    seats: any;
     constructor(
       private easy:CommonfunctionService,
       private http :ApiService
@@ -33,12 +33,14 @@ seats: any;
     ngOnInit() {
     this.getStationsData();
     this.getTrains();
-    this.openVagon;
-    this.openSeat;
+    this.getTrainInfo();
+    
   }
   from!:string;
   to!:string;
   vagonId!:number;
+  id!:number;
+  trainId!:number
   
   getTrains(){
     this.http.getData(`https://railway.stepprojects.ge/api/getdeparture?from=${this.from}&to=${this.to}&date=${this.dateSelect}`)
@@ -68,33 +70,36 @@ seats: any;
        console.log(this.stationArr)
       })
       }
-      getVagons(){
         
+// train
+      getTrainInfo(){
+      this.easy.getInfo()
+      this.http.getData("https://railway.stepprojects.ge/api/trains")
+      .subscribe((resp : any)=>{
+       console.log(resp)
+       this.vagonArr=resp
+       console.log(this.vagonArr)
+      });
 
       }
-  
-     openVagon(trainId: number) {
-        this.easy.getInfo()
-        this.http.getData(`https://railway.stepprojects.ge/api/getvagon/${trainId}`)
-        .subscribe((resp :any) => {
-        console.log(resp)
-        this.vagonArr = resp
-        console.log(this.vagonArr)
-      });
-    }
-    openSeat(vagonId: number){
-       this.easy.getInfo()
-       this.http.getData(`https://railway.stepprojects.ge/api/getseat/${vagonId}`)
-       .subscribe((resp :any) => {
-        console.log(resp)
-        this.seatArr = resp
-        console.log(this.seatArr)
 
-    });
-  }
-  
-  
-  
+      // vagons
+      getVagnInfo(){
+      this.easy.getInfo()
+      this.http.getData("")
+      .subscribe((resp : any)=>{
+       console.log(resp)
+       this.seatArr=resp
+       console.log(this.seatArr)
+      });
+
+      }
+      
+
+
+
+
+
       stationArr:Station[]=[] 
       trainArr:Departure[]=[]
       vagonArr:Vagon[]=[]
@@ -104,28 +109,6 @@ seats: any;
       
    
   
-
-    selectSeat(seat: Seat) {
-    if (seat.isOccupied) {
-      alert('ეს ადგილი დაკავებულია, გთხოვთ აირჩიოთ სხვა');
-      return;
-    }
-    this.selectedSeat = seat;
-    this.showSeat = false;
-  }
-
-  closeSeat() {
-    this.showSeat = false;
-  }
 }
 
-  //  }
-  // vagonArr(vagonArr: any) {
-  //   throw new Error('Method not implemented.');
-  // }
-
-  //  isOpen = false;
-
-  // toggleSidebar() {
-  //   this.isOpen = !this.isOpen;
-  // }
+  

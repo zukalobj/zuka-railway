@@ -1,15 +1,10 @@
 <div class="main">
       <div class="login-wrapper">
-  <!-- Signal Light -->
-  <div class="signal" [ngClass]="{ 'error': loginFailed }"></div>
-
-  <!-- Login Form -->
-  <form [formGroup]="loginForm" (ngSubmit)="onLogin()" class="login-box">
     <h1 class="title">მატარებლის სისტემაში შესვლა</h1>
 
     <div class="input-group">
       <label>მომხმარებელი</label>
-      <input type="text" formControlName="username" placeholder="მაგ. admin" />
+      <input type="text" placeholder="მაგ. admin" [(ngModel)]="phone" />
     </div>
 
     <div class="input-group">
@@ -17,15 +12,9 @@
       <input type="password" formControlName="password" placeholder="••••••••" />
     </div>
 
-    <button type="submit" class="login-btn">შესვლა</button>
+    <button type="submit" class="login-btn" (click)="logIn()">შესვლა</button>
     
-
-    <div class="error-text" *ngIf="loginFailed">
-      ❌ ავტორიზაცია ვერ მოხერხდა
-      
     </div>
-  </form>
-</div>
 </div>
 
 
