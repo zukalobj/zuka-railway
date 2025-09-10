@@ -39,7 +39,7 @@
     </h2>
     <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
       <div class="accordion-body">
-        <strong *ngFor="let vagon of trainArr[0].trains[0]?.vagons"> {{vagon.name}}<button>ვაგონის არჩევა</button></strong><br>
+        <strong *ngFor="let vagon of trainArr[0].trains[0]?.vagons"> {{vagon.name}}<button (click)="getToVagon()">ვაგონის არჩევა</button></strong><br>
       </div>
     </div>
   </div>
@@ -51,7 +51,7 @@
     </h2>
     <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
       <div class="accordion-body">
-         <strong *ngFor="let vagon of trainArr[0].trains[1]?.vagons">{{vagon.name}}<button>ვაგონის არჩევა</button></strong><br>
+         <strong *ngFor="let vagon of trainArr[0].trains[1]?.vagons">{{vagon.name}}<button (click)="getToVagon()">ვაგონის არჩევა</button></strong><br>
       </div>
     </div>
   </div>
