@@ -1,5 +1,5 @@
 import { Component, input } from '@angular/core';
-import { RouterLink, RouterModule } from '@angular/router';
+import { Router, RouterLink, RouterModule } from '@angular/router';
 import { faCoffee } from '@fortawesome/free-solid-svg-icons';
 import { CommonModule } from '@angular/common';
 import { ApiService } from '../service/api.service';
@@ -13,12 +13,14 @@ import { Train } from '../models/train';
 
 @Component({
   selector: 'app-trips',
-  imports: [CommonModule,FormsModule],
+  imports: [CommonModule,FormsModule,RouterLink],
   standalone:true,
   templateUrl: './trips.component.html',
   styleUrl: './trips.component.scss'
 })
 export class TripsComponent {
+
+
     fromDate: string = '';
     toDate: string = '';
     selectedDate: any;
@@ -26,14 +28,20 @@ export class TripsComponent {
     showSeat: boolean = false;
     vagons: any;
     seats: any;
+    
+    
     constructor(
       private easy:CommonfunctionService,
-      private http :ApiService
+      private http :ApiService,
+      private router : Router
     ) {}
+
+
+    
     ngOnInit() {
     this.getStationsData();
     this.getTrains();
-    this.getTrainInfo();
+   
     
   }
   from!:string;
@@ -56,6 +64,12 @@ export class TripsComponent {
     console.log("date selected by user is"+this.dateSelect);
     this.getTrains()
   }
+
+
+  getToVagon(){
+    this.router.navigate(['/wagon'])
+
+  }
   
   
     
@@ -72,37 +86,11 @@ export class TripsComponent {
       }
         
 // train
-      getTrainInfo(){
-      this.easy.getInfo()
-      this.http.getData("https://railway.stepprojects.ge/api/trains")
-      .subscribe((resp : any)=>{
-       console.log(resp)
-       this.vagonArr=resp
-       console.log(this.vagonArr)
-      });
+    
 
-      }
-
-      // vagons
-      getVagnInfo(){
-      this.easy.getInfo()
-      this.http.getData("")
-      .subscribe((resp : any)=>{
-       console.log(resp)
-       this.seatArr=resp
-       console.log(this.seatArr)
-      });
-
-      }
-      
-
-
-
-
-
+  
       stationArr:Station[]=[] 
       trainArr:Departure[]=[]
-      vagonArr:Vagon[]=[]
       seatArr:Seat[]=[]
   
   
