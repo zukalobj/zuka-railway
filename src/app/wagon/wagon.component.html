@@ -2,7 +2,7 @@
 
 <!-- *ngFor="let train of trainArr -->
 
-<div class="departure-card">
+<!-- <div class="departure-card">
   <div class="departure-header">
     <i class="fas fa-train"></i>
     <span> train.name </span>
@@ -98,4 +98,23 @@
 
 
 
+ -->
+<div class="train-wagon">
+  <h2>ფასი : {{ seatPrice }} ლარი</h2>
+<div class="btns">
+  @for(seat of seats; track seat.seatId){
+    <button 
+      [disabled]="seat.isOccupied" 
+      (click)="selectSeat(seat.seatId)" 
+      [ngClass]="{
+        'selected': isSeatSelected(seat.seatId),
+        'notSelected': !isSeatSelected(seat.seatId)
+      }">
+      {{ seat.number }}
+    </button>
+  }
+</div>
+
+<button routerLink="/tickets">Buy Ticket</button>
+</div>
 

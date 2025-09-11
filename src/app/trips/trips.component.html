@@ -7,7 +7,7 @@
   <div class="form-group">
     <label><i class="fas fa-map-marker-alt"></i> From</label>
      <select [(ngModel)]="from" class="selector">
-       <option value="">From</option>
+       <option value="" selected>From</option>
       <option [value]="el.name"*ngFor="let el of stationArr">{{el.name}}</option>
     </select>
   </div>
@@ -15,7 +15,7 @@
   <div class="form-group">
     <label><i class="fas fa-map-pin"></i> To</label>
      <select  [(ngModel)]="to"class="selector">
-       <option value="">To</option>
+       <option value="" selected>To</option>
       <option [value]="el.name"*ngFor="let el of stationArr">{{el.name}}</option>
     </select>
   </div>
@@ -39,7 +39,7 @@
     </h2>
     <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
       <div class="accordion-body">
-        <strong *ngFor="let vagon of trainArr[0].trains[0]?.vagons"> {{vagon.name}}<button (click)="getToVagon()">ვაგონის არჩევა</button></strong><br>
+        <strong *ngFor="let vagon of trainArr[0].trains[0]?.vagons"> {{vagon.name}}<button (click)="getToVagon(vagon.id, trainArr[0].trains[2].id)">ვაგონის არჩევა</button></strong><br>
       </div>
     </div>
   </div>
@@ -51,7 +51,7 @@
     </h2>
     <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
       <div class="accordion-body">
-         <strong *ngFor="let vagon of trainArr[0].trains[1]?.vagons">{{vagon.name}}<button (click)="getToVagon()">ვაგონის არჩევა</button></strong><br>
+         <strong *ngFor="let vagon of trainArr[0].trains[1]?.vagons">{{vagon.name}}<button (click)="getToVagon(vagon.id, trainArr[0].trains[2].id)">ვაგონის არჩევა</button></strong><br>
       </div>
     </div>
   </div>
@@ -63,7 +63,7 @@
     </h2>
     <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
       <div class="accordion-body">
-         <strong *ngFor="let vagon of trainArr[0].trains[2]?.vagons">{{vagon.name}} <button (click)="getToVagon()">ვაგონის არჩევა</button></strong><br>
+         <strong *ngFor="let vagon of trainArr[0].trains[2]?.vagons">{{vagon.name}} <button (click)="getToVagon(vagon.id, trainArr[0].trains[2].id)">ვაგონის არჩევა</button></strong><br>
     </div>
   </div>
 </div>

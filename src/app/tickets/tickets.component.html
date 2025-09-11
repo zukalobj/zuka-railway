@@ -1,1 +1,33 @@
 <p>tickets works!</p>
+
+
+<input type="text" name="" id="" placeholder="Phone Number" [(ngModel)]="phoneNumber">
+<input type="email" placeholder="Email" [(ngModel)]="email">
+
+@for(person of seats; track $index){
+   <div class="inputs">
+       <input type="text" placeholder="Name" [(ngModel)]="person.name" >
+           <input type="text" placeholder="SurName" [(ngModel)]="person.surname" >
+               <input type="text" placeholder="Id Number" [(ngModel)]="person.idNumber">
+   </div>
+}
+
+<button (click)="postTicket()">Register Ticket</button>
+
+
+<!-- {
+  "trainId": 0,
+  "date": "2025-09-11T09:48:00.044Z",
+  "email": "string",
+  "phoneNumber": "string",
+  "people": [
+    {
+      "seatId": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+      "name": "string",
+      "surname": "string",
+      "idNumber": "string",
+      "status": "string",
+      "payoutCompleted": true
+    }
+  ]
+} -->

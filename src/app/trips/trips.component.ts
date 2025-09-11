@@ -44,8 +44,8 @@ export class TripsComponent {
    
     
   }
-  from!:string;
-  to!:string;
+  from:string="from";
+  to:string ="to";
   vagonId!:number;
   id!:number;
   trainId!:number
@@ -56,6 +56,7 @@ export class TripsComponent {
       console.log(resp)
       this.trainArr=resp
       console.log(this.trainArr)
+      localStorage.setItem("selectedDate", this.dateSelect )
     })
   }
   
@@ -66,8 +67,9 @@ export class TripsComponent {
   }
 
 
-  getToVagon(){
-    this.router.navigate(['/wagon'])
+  getToVagon(id:number, trainid:number){
+    this.router.navigate([`/wagon/${id}`])
+    localStorage.setItem("selectedTrain", trainid.toString())
 
   }
   

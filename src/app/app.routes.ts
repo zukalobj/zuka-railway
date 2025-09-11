@@ -39,7 +39,7 @@ export const routes: Routes = [
         
     },
     {
-        path:'wagon',
+        path:'wagon/:id',
         loadComponent:()=>import('./wagon/wagon.component')
         .then(p=>p.WagonComponent),
         

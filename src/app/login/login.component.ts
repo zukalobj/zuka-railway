@@ -44,7 +44,7 @@ export class LoginComponent {
            alert("Loged In Succesfully")
            localStorage.setItem("token", resp.token)
            this.auth.logIn()
-           this.router.navigateByUrl("/home")
+           this.router.navigateByUrl("/trips")
 
       })
 

@@ -19,6 +19,10 @@ export class ApiService {
     return this.http.post(url, obj).pipe(catchError(this.errorHandling));
   }
 
+      postDataTypeText(url: string, obj: any) {
+    return this.http.post(url, obj, { responseType: 'text' });
+  }
+
   private errorHandling(err: HttpErrorResponse) {
     return throwError(() => {
       Error('somethong went werog, try later');
