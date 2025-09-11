@@ -1,19 +1,19 @@
-<p>tickets works!</p>
 
+<div class="booking-form-container">
+  <input type="text" name="" id="" placeholder="Phone Number" [(ngModel)]="phoneNumber">
+  <input type="email" placeholder="Email" [(ngModel)]="email">
+  
+  @for(person of seats; track $index){
+     <div class="inputs">
+         <input type="text" placeholder="Name" [(ngModel)]="person.name" >
+             <input type="text" placeholder="SurName" [(ngModel)]="person.surname" >
+                 <input type="text" placeholder="Id Number" [(ngModel)]="person.idNumber">
+     </div>
+  }
+  
+  <button (click)="postTicket()">Register Ticket</button>
 
-<input type="text" name="" id="" placeholder="Phone Number" [(ngModel)]="phoneNumber">
-<input type="email" placeholder="Email" [(ngModel)]="email">
-
-@for(person of seats; track $index){
-   <div class="inputs">
-       <input type="text" placeholder="Name" [(ngModel)]="person.name" >
-           <input type="text" placeholder="SurName" [(ngModel)]="person.surname" >
-               <input type="text" placeholder="Id Number" [(ngModel)]="person.idNumber">
-   </div>
-}
-
-<button (click)="postTicket()">Register Ticket</button>
-
+</div>
 
 <!-- {
   "trainId": 0,

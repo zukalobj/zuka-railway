@@ -1,4 +1,11 @@
+.main-vagon{
+  height: 100vh;
+  position: relative;
+  background: linear-gradient(to bottom right, #2c3e50, #4ca1af);
+  align-items: center;
+  justify-content: center;
 
+}
 
 .btn-primary {
   background-color: #0077ff;
@@ -6,6 +13,9 @@
   box-shadow: 0 4px 14px rgba(0, 119, 255, 0.25);
   margin-left: 100px;
   margin-top: 20px;
+  width: 150px;
+  height: 50px;
+  border-radius: 20px;
 }
 
 .btn-primary:hover {
@@ -17,112 +27,133 @@
 
 
 .train-wagon {
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 30px 20px;
-  background: linear-gradient(to bottom, #dce3ea, #cbd5df); 
-  border-radius: 40px;
-  box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.1);
-  border: 3px solid #999;
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 40px 30px;
+  background: linear-gradient(145deg, #e3eaf4, #cbd5df); /* ვაგონის შიდა რბილი ფერი */
+  border-radius: 30px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1), inset 0 0 30px rgba(0, 0, 0, 0.05);
+  border: 4px solid #9aa5b1;
   position: relative;
   overflow: hidden;
+  position: relative;
 }
 
-
+/* დამატებითი ზედა შუქი */
 .train-wagon::before {
   content: '';
   position: absolute;
-  top: 10px;
+  top: 0;
   left: 50%;
   transform: translateX(-50%);
-  width: 90%;
-  height: 30px;
-  background: radial-gradient(circle, #b0c4de 20%, transparent 70%);
-  border-radius: 15px;
-  opacity: 0.4;
+  width: 100%;
+  height: 40px;
+  background: radial-gradient(circle, #fff 10%, transparent 70%);
+  opacity: 0.3;
+  z-index: 1;
 }
 
-/* ფასი */
+/* სათაური */
 .train-wagon h2 {
   text-align: center;
-  font-size: 24px;
-  margin-bottom: 20px;
-  color: #2c3e50;
+  font-size: 26px;
+  margin-bottom: 30px;
+  color: #1e293b;
+  position: relative;
+  z-index: 2;
 }
 
-/* სითების კონტეინერი */
+/* სავარძლების გრიდი */
 .btns {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(60px, 1fr));
-  gap: 15px;
+  grid-template-columns: repeat(auto-fill, minmax(70px, 1fr));
+  gap: 20px;
   justify-items: center;
   margin-bottom: 30px;
+  position: relative;
+  z-index: 2;
 }
 
-
+/* სავარძლები */
 .btns button {
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
-  border: 2px solid transparent;
-  font-size: 18px;
+  width: 65px;
+  height: 65px;
+  border-radius: 20% 20% 40% 40% / 30% 30% 50% 50%; /* სავარძლის ფორმა */
+  background: linear-gradient(to bottom, #d0d7df, #aebaca);
+  border: 2px solid #94a3b8;
+  box-shadow: inset 0 -3px 6px rgba(0, 0, 0, 0.15), 0 2px 6px rgba(0, 0, 0, 0.1);
+  font-size: 16px;
+  font-weight: bold;
+  color: #1e293b;
   cursor: pointer;
-  transition: all 0.3s ease;
-  background-color: #e0e0e0;
-}
-.btns button:hover{
-  background-color: #4caf50;
-  color: white;
-  border-color: #388e3c;
+  transition: all 0.2s ease;
+  position: relative;
 }
 
+/* ჰოვერი */
+.btns button:hover:not(:disabled):not(.selected) {
+  background: #4caf50;
+  color: white;
+  border-color: #388e3c;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* არჩეული სავარძელი */
 .btns button.selected {
-  background-color: #4caf50;
+  background: #4caf50;
   color: white;
-  border-color: #388e3c;
+  border-color: #2e7d32;
+  box-shadow: inset 0 -2px 5px rgba(0, 0, 0, 0.2);
 }
 
-
-.btns button.notSelected {
-  background-color: #f0f0f0;
-  color: #333;
-}
-
-
+/* მიუწვდომელი სავარძელი */
 .btns button:disabled {
-  background-color: #bdbdbd;
-  color: #777;
+  background-color: #b0b8c1;
+  color: #6b7280;
+  border-color: #9ca3af;
   cursor: not-allowed;
-  border-color: #9e9e9e;
+  opacity: 0.7;
 }
 
+/* ცარიელი სავარძელი */
+.btns button.notSelected {
+  background: linear-gradient(to bottom, #e2e8f0, #cbd5e1);
+  color: #334155;
+}
+
+/* ბილეთის ყიდვა */
 button[routerLink="/tickets"] {
   display: block;
   margin: 0 auto;
   padding: 14px 28px;
   font-size: 18px;
-  background-color: #2196f3;
+  background-color: #2567f5;
   color: white;
   border: none;
-  border-radius: 10px;
+  border-radius: 12px;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease, box-shadow 0.2s ease;
+  box-shadow: 0 6px 18px rgba(37, 103, 245, 0.4);
+  position: relative;
+  z-index: 2;
 }
 
 button[routerLink="/tickets"]:hover {
-  background-color: #1976d2;
+  background-color: #1d4ed8;
 }
 
+/* Responsive */
 @media (max-width: 600px) {
   .btns {
-    grid-template-columns: repeat(auto-fill, minmax(45px, 1fr));
-    gap: 10px;
+    grid-template-columns: repeat(auto-fill, minmax(50px, 1fr));
+    gap: 12px;
   }
 
   .btns button {
-    width: 45px;
-    height: 45px;
-    font-size: 14px;
+    width: 50px;
+    height: 50px;
+    font-size: 13px;
+    border-radius: 25% 25% 40% 40% / 35% 35% 50% 50%;
   }
 
   .train-wagon h2 {

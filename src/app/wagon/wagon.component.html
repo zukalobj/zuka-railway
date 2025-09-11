@@ -1,104 +1,6 @@
+
+<div class="main-vagon">
 <button class="btn btn-primary" (click)="backPage()">back</button>
-
-<!-- *ngFor="let train of trainArr -->
-
-<!-- <div class="departure-card">
-  <div class="departure-header">
-    <i class="fas fa-train"></i>
-    <span> train.name </span>
-  </div>
-
-  <div class="departure-info">
-    <div class="departure-row">
-      <span class="label">რეისი</span>
-      <span class="value"> train.name </span>
-    </div>
-    <div class="departure-row">
-      <span class="label">დღე:</span>
-      <span class="value"> train.date </span>
-    </div>
-    <div class="departure-row">
-      <span class="label">გამგზავრება:</span>
-      <span class="value"> train.from  train.departure </span>
-    </div>
-    <div class="departure-row">
-      <span class="label">ჩასვლა</span>
-      <span class="value">train.to train.arrive</span>
-    </div>
-    <div class="btn btn-secondary" (click)="selectTrain(train)">არჩევა</div>
-  </div>
-</div>
-<div class="departure-card">
-  <div class="departure-header">
-    <i class="fas fa-train"></i>
-    <span> train.name </span>
-  </div>
-
-  <div class="departure-info">
-    <div class="departure-row">
-      <span class="label">რეისი</span>
-      <span class="value"> train.name </span>
-    </div>
-    <div class="departure-row">
-      <span class="label">დღე:</span>
-      <span class="value"> train.date </span>
-    </div>
-    <div class="departure-row">
-      <span class="label">გამგზავრება:</span>
-      <span class="value"> train.from  train.departure </span>
-    </div>
-    <div class="departure-row">
-      <span class="label">ჩასვლა</span>
-      <span class="value">train.to train.arrive</span>
-    </div>
-    <div class="btn btn-secondary" (click)="selectTrain(train)">არჩევა</div>
-  </div>
-</div>
-
-
-<div class="departure-card">
-  <div class="departure-header">
-    <i class="fas fa-train"></i>
-    <span> train.name </span>
-  </div>
-
-  <div class="departure-info">
-    <div class="departure-row">
-      <span class="label">რეისი</span>
-      <span class="value"> train.name </span>
-    </div>
-    <div class="departure-row">
-      <span class="label">დღე:</span>
-      <span class="value"> train.date </span>
-    </div>
-    <div class="departure-row">
-      <span class="label">გამგზავრება:</span>
-      <span class="value"> train.from  train.departure </span>
-    </div>
-    <div class="departure-row">
-      <span class="label">ჩასვლა</span>
-      <span class="value">train.to train.arrive</span>
-    </div>
-    <div class="btn btn-secondary" (click)="selectTrain(train)">არჩევა</div>
-  </div>
-</div>
-
-
-<div class="seat-popover" *ngIf="showSeats">
-  <h3>ადგილები</h3>
-  <button (click)="closeSeats()" class="btn-close">X</button>
-  <ul>
-    <li *ngFor="let seat of seats" [class.occupied]="seat.isOccupied">
-      <strong>ნომერი:</strong> {{ seat.number }} - <strong>ფასი:</strong> {{ seat.price }} ₾
-      <span *ngIf="seat.isOccupied" class="occupied-label">(დაკავებულია)</span>
-      <button *ngIf="!seat.isOccupied" (click)="selectSeat(seat)">არჩევა</button>
-    </li>
-  </ul>
-</div>
-
-
-
- -->
 <div class="train-wagon">
   <h2>ფასი : {{ seatPrice }} ლარი</h2>
 <div class="btns">
@@ -118,3 +20,5 @@
 <button routerLink="/tickets">Buy Ticket</button>
 </div>
 
+
+</div> 

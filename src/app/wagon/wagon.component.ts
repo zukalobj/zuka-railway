@@ -20,7 +20,6 @@ import { Seat } from '../models/seat';
   styleUrl: './wagon.component.scss',
 })
 export class WagonComponent {
-  // easy: any;
   seatPrice!: number;
   train: any;
   seats: Seat[] = [];
@@ -38,12 +37,14 @@ export class WagonComponent {
       this.vagonId = id['id'];
       console.log(this.vagonId);
     });
+    
   }
 
   vagonId!: number;
   getData(url: string) {}
   ngOnInit() {
     this.getTrainInfo();
+  
   }
   selected = 'notSeletced';
   selectSeat(seatId: string) {
