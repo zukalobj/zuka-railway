@@ -15,6 +15,33 @@
 
 </div>
 
+<div class="purchased-tickets" *ngIf="purchasedTickets.length">
+  <h2>თქვენი ბილეთები</h2>
+
+  <div *ngFor="let ticket of purchasedTickets" class="train-ticket">
+    <div class="ticket-left">
+      <h3 class="route">{{ ticket.from || 'თბილისი' }} → {{ ticket.to || 'ბათუმი' }}</h3>
+      <p class="date">🗓 {{ date }}</p>
+      <p class="times">
+        ⏱ გამგზავრება: {{ ticket.departure || '10:30' }}<br />
+        🚉 ჩასვლა: {{ ticket.arrive || '14:45' }}
+      </p>
+    </div>
+
+    <div class="ticket-right">
+      <div class="ticket-id">
+        <span>ბილეთის ID:</span> #{{ ticket.id || ticket.seatId || '—' }}
+      </div>
+      <div class="passenger">
+        <span>მგზავრი:</span> {{ ticket.name }} {{ ticket.surname }}
+      </div>
+      <!-- <button class="btn-delete" (click)="deleteTicket(i)">წაშლა</button> -->
+      <div class="train-icon">🚆</div>
+    </div>
+  </div>
+</div>
+
+
 <!-- {
   "trainId": 0,
   "date": "2025-09-11T09:48:00.044Z",

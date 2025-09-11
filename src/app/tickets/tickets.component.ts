@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { ApiService } from '../service/api.service';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-tickets',
-  imports: [FormsModule],
+  imports: [FormsModule,CommonModule],
   templateUrl: './tickets.component.html',
   styleUrl: './tickets.component.scss',
 })
@@ -26,10 +27,11 @@ export class TicketsComponent {
   seats: any[] = [];
   email : string = ""
   phoneNumber : string = ""
+  purchasedTickets: any[] = []; 
+  ticketId!:number;
 
   postTicket() {
     console.log(this.seats);
-
     this.http.postDataTypeText('https://railway.stepprojects.ge/api/tickets/register', {
       trainId: this.trainId,
       date: this.date,
@@ -39,12 +41,29 @@ export class TicketsComponent {
     }).subscribe((resp: any)=> {
        console.log(resp);
        alert(resp)
+      this.purchasedTickets = resp.tickets || this.seats;
+       this.seats = [];
+      this.email = '';
+      this.phoneNumber = '';
        localStorage.removeItem("selectedSeats")
            localStorage.removeItem("selectedDate")
                localStorage.removeItem("selectedTrain")
-               
-       
-    });
+    }); 
+
+  // deleteTicketInfo() {
+  // if (!confirm('ნამდვილად გსურთ ბილეთის წაშლა?')) return;
+  // this.http.delete(`https://railway.stepprojects.ge/api/tickets/cancel${ticketId}`).subscribe({
+  //   next: () => {
+  //     // თუ წარმატებით წაიშალა სერვერზე, ადგილობრივ სიიდან ამოღებ
+  //     this.purchasedTickets.splice(index []);
+  //     localStorage.setItem('purchasedTickets', JSON.stringify(this.purchasedTickets));
+  //     alert('ბილეთი წარმატებით წაიშალა');
+  //   },
+  //   error: (err) => {
+  //     console.error('წაშლის შეცდომა:', err);
+  //     alert('ბილეთის წაშლა ვერ მოხერხდა');
+  //   }
+  // });
 
     //
 
@@ -66,3 +85,4 @@ export class TicketsComponent {
     // }
   }
 }
+

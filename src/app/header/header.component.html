@@ -6,31 +6,7 @@
     <span *ngIf="isOpen">მენიუ</span>
   </div>
 
- 
-  <!-- <a class="menu-item" href="#">
-     <a routerLink="/home"routerLinkActive="active"><i class="fas fa-train"></i></a>
-    <span *ngIf="isOpen">გამგზავრება</span>
-  </a>
 
-
-  <a class="menu-item" href="#">
-    <a routerLink="/login"routerLinkActive="active"><i class="fas fa-sign-in-alt"></i></a>
-    <span *ngIf="isOpen">შესვლა</span>
-  </a>
-
-
-  <a class="menu-item" href="#">
-    <a routerLink="/tickets"routerLinkActive="active"><i class="fas fa-user-plus"></i></a>
-    <span *ngIf="isOpen">რეგისტრაცია</span>
-  </a>
-
-
-  <a class="menu-item" href="#">
-     <a routerLink="/trips"routerLinkActive="active"> <i class="fas fa-cog"></i></a>
-    <span *ngIf="isOpen">პარამეტრები</span>
-  </a>
-</div>
- -->
 <a class="menu-item" routerLink="/home" routerLinkActive="active">
   <i class="fas fa-train"></i>
   <span *ngIf="isOpen">გამგზავრება</span>
@@ -54,7 +30,7 @@
   <i class="fa-solid fa-map-location-dot"></i>
   <span *ngIf="isOpen">ბილეთის ძებნა</span>
 </a>
-<a class="menu-item" routerLink="/tickets" routerLinkActive="active">
+<a class="menu-item" routerLink="/confirm" routerLinkActive="active">
   <i class="fa-solid fa-check"></i>
   <span *ngIf="isOpen">ბილეთის შემოწმება</span>
 </a>

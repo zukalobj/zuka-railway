@@ -44,6 +44,12 @@ export const routes: Routes = [
         .then(p=>p.WagonComponent),
         
     },
+     {
+        path:'confirm',
+        loadComponent:()=>import('./confirm/confirm.component')
+        .then(p=>p.ConfirmComponent),
+        
+    },
     {
         path:'**',
         component:ErrorComponent
