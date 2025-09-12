@@ -49,7 +49,17 @@ export class TripsComponent {
   vagonId!:number;
   id!:number;
   trainId!:number
-  
+ active: number | null = null;
+
+
+ 
+toggle(index: number) {
+  if (this.active === index) {
+    this.active = null;
+  } else {
+    this.active = index;
+  }
+}
   getTrains(){
     this.http.getData(`https://railway.stepprojects.ge/api/getdeparture?from=${this.from}&to=${this.to}&date=${this.dateSelect}`)
     .subscribe((resp : any)=>{

@@ -69,7 +69,6 @@ export class WagonComponent {
     return this.selecSeats.some(seat => seat.seatId === seatId);
   }
   getTrainInfo() {
-    //  this.easy.getInfo()
     this.http
       .get(`https://railway.stepprojects.ge/api/getvagon/${this.vagonId}`)
       .subscribe((resp: any) => {
@@ -80,19 +79,7 @@ export class WagonComponent {
         this.seatPrice = this.seats[0].price;
       });
   }
-  // selectTrain(train: any) {
-  //   this.train = train;
 
-  //   this.seats = [
-  //     { seatId: '3fa85f64-5717-4562-b3fc-2c963f66afa6', number: '1A', price: 25, isOccupied: false, vagonId: 1 },
-  //     { seatId: '3fa85f64-5717-4562-b3fc-2c963f66afa7', number: '2B', price: 25, isOccupied: true, vagonId: 1 },
-  //     { seatId: '3fa85f64-5717-4562-b3fc-2c963f66afa8', number: '3C', price: 25, isOccupied: false, vagonId: 1 },
-  //   ];
-  //   this.showSeats = true;
-  //        }
-  // closeSeats() {
-  //   this.showSeats = false;
-  // }
 
   backPage() {
     this.router.navigate(['/trips']);

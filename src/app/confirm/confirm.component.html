@@ -1,0 +1,68 @@
+<div class="ticket-card">
+  <div class="ticket-header">
+    <div>
+      <div class="ticket-route">თბილისი → ბათუმი</div>
+      <img
+        src="https://media.canva.com/v2/files/uri:ifs%3A%2F%2FM%2F890fa952-41f0-4da8-b6a8-c3e23e5752c4?csig=AAAAAAAAAAAAAAAAAAAAAMiEOr-bcSYHbexgY2hsfYBg9CE8N7BCfbyQFTo6x_SF&exp=1757713258&signer=media-rpc&token=AAIAAU0AJDg5MGZhOTUyLTQxZjAtNGRhOC1iNmE4LWMzZTIzZTU3NTJjNAAAAAABmT_f1hCQUKe2SUz7ROGxxQ9-UYHoC5qXhgECXUXlo1_VhE6mfQ"
+        class="ticket-image"
+        alt="Train Image"
+      />
+      <div class="ticket-number">რეისი № 882</div>
+    </div>
+  </div>
+
+  <div class="ticket-times">
+    <div>
+      <div class="label">გამგზავრება</div>
+      <div class="time">08:00</div>
+      <div class="station">თბილისი ცენტრალური</div>
+    </div>
+    <div class="arrow">→</div>
+    <div>
+      <div class="label">ჩასვლა</div>
+      <div class="time">13:15</div>
+      <div class="station">ბათუმი</div>
+    </div>
+  </div>
+
+  <div class="ticket-info">
+    <div><strong>თარიღი:</strong> 2025-09-15</div>
+    <div><strong>ვაგონი:</strong> 4</div>
+    <div><strong>ადგილი:</strong> 18A</div>
+  </div>
+</div>
+
+
+<div class="ticket-accordion">
+  <div class="ticket-item">
+    <div class="ticket-header" (click)="toggle(0)">
+      <div class="ticket-summary">
+        <span class="route">თბილისი → ბათუმი</span>
+        <span class="time">10:25 - 15:38</span>
+      </div>
+      <div class="ticket-toggle-icon">+</div>
+    </div>
+    <div class="ticket-body" [class.open]="active === 0">
+      <div class="ticket-content">
+        <p>გახსნილი დეტალური ინფორმაცია ვაგონების არჩევის, ადგილების და სხვა მონაცემების შესახებ.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="ticket-item">
+    <div class="ticket-header" (click)="toggle(1)">
+      <div class="ticket-summary">
+        <span class="route">თბილისი → ფოთი</span>
+        <span class="time">08:00 - 12:45</span>
+      </div>
+      <div class="ticket-toggle-icon">+</div>
+    </div>
+    <div class="ticket-body" [class.open]="active === 1">
+      <div class="ticket-content">
+        <p>დამატებითი ინფორმაცია: ვაგონები, მოხმარებლის პირობები, ფასები და ა.შ.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- შეგიძლია მეტი ticket-item-ები დაამატო -->
+</div>

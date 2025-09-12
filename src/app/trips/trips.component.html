@@ -1,6 +1,4 @@
 
-
-
 <div class="booking-form">
   <h2><i class="fas fa-train"></i> მატარებლის ბილეთების ძებნა</h2>
 
@@ -27,10 +25,26 @@
   <button  (click)="dateSelection()" class="search-btn">
     <i class="fas fa-search"></i> მოძებნე მატარებელი
   </button>
+</div> 
+<div class="info-banner">
+  <div class="info-item">
+    <i class="fas fa-weight"></i>
+    დაშვებეული წონა: <strong>20 კგ</strong>
+  </div>
+  <div class="info-item">
+    <i class="fas fa-suitcase-rolling"></i>
+    ცალკე სატარებელი<strong>ხელის ჩანთა</strong>
+  </div>
+  <div class="info-item">
+    <i class="fas fa-dog"></i>
+    ცხოველების შემოყვანა <strong>სასტიკად აკრძალულია</strong>
+  </div>
 </div>
 
 
-<div class="accordion" id="accordionExample" *ngIf="trainArr.length>0 && trainArr[0].trains">
+
+
+<!-- <div class="accordion" id="accordionExample" *ngIf="trainArr.length>0 && trainArr[0].trains">
   <div class="accordion-item">
     <h2 class="accordion-header">
       <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
@@ -52,6 +66,7 @@
     <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
       <div class="accordion-body">
          <strong *ngFor="let vagon of trainArr[0].trains[1]?.vagons">{{vagon.name}}<button (click)="getToVagon(vagon.id, trainArr[0].trains[2].id)">ვაგონის არჩევა</button></strong><br>
+         
       </div>
     </div>
   </div>
@@ -64,6 +79,36 @@
     <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
       <div class="accordion-body">
          <strong *ngFor="let vagon of trainArr[0].trains[2]?.vagons">{{vagon.name}} <button (click)="getToVagon(vagon.id, trainArr[0].trains[2].id)">ვაგონის არჩევა</button></strong><br>
+    </div>
+  </div>
+</div> -->
+
+<div class="ticket-accordion" *ngIf="trainArr.length > 0 && trainArr[0].trains">
+  <div
+    class="ticket-item"
+    *ngFor="let train of trainArr[0].trains; let i = index"
+    [class.open]="active === i"
+  >
+    <div class="ticket-header" (click)="toggle(i)">
+      <div class="ticket-summary">
+        <span class="route">{{ train.name }}</span>
+        <span class="time">{{ train.departure }} → {{ train.arrive }}</span>
+      </div>
+      <div class="ticket-toggle-icon">+</div>
+    </div>
+
+    <div class="ticket-body" [class.open]="active === i">
+      <div class="ticket-content">
+        <h4>ვაგონები:</h4>
+        <div class="vagon-list">
+          <div class="vagon-card" *ngFor="let vagon of train.vagons">
+            <div class="vagon-name">{{ vagon.name }}</div>
+            <button class="select-button" (click)="getToVagon(vagon.id, train.id)">
+              ვაგონის არჩევა
+            </button>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>

@@ -8,5 +8,12 @@ import { Component } from '@angular/core';
 })
 export class ConfirmComponent {
   
-
+active: number | null = null;
+toggle(index: number) {
+  if (this.active === index) {
+    this.active = null;
+  } else {
+    this.active = index;
+  }
+}
 }

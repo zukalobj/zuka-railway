@@ -2,16 +2,22 @@ import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { ApiService } from '../service/api.service';
 import { CommonModule } from '@angular/common';
+import { ActivatedRoute,Router, RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-tickets',
-  imports: [FormsModule,CommonModule],
+  imports: [FormsModule,CommonModule,RouterLink],
   templateUrl: './tickets.component.html',
   styleUrl: './tickets.component.scss',
 })
 export class TicketsComponent {
-  constructor(private http: ApiService) {}
+  constructor(private http: ApiService,
+    private router: RouterLink,
+     private rout: ActivatedRoute
+  ) {}
+  
 
+  
   ngOnInit() {
     if (localStorage.getItem('selectedSeats')) {
       const selectedSeats = localStorage.getItem('selectedSeats');
@@ -29,6 +35,11 @@ export class TicketsComponent {
   phoneNumber : string = ""
   purchasedTickets: any[] = []; 
   ticketId!:number;
+
+  //  backToPage() {
+  //   this.router.navigate(['/wagon']);
+  // }
+
 
   postTicket() {
     console.log(this.seats);
@@ -48,7 +59,9 @@ export class TicketsComponent {
        localStorage.removeItem("selectedSeats")
            localStorage.removeItem("selectedDate")
                localStorage.removeItem("selectedTrain")
-    }); 
+    });  
+
+
 
   // deleteTicketInfo() {
   // if (!confirm('ნამდვილად გსურთ ბილეთის წაშლა?')) return;
