@@ -30,7 +30,7 @@
   max-width: 900px;
   margin: 40px auto;
   padding: 40px 30px;
-  background: linear-gradient(145deg, #e3eaf4, #cbd5df); /* ვაგონის შიდა რბილი ფერი */
+  background: linear-gradient(145deg, #e3eaf4, #cbd5df); 
   border-radius: 30px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1), inset 0 0 30px rgba(0, 0, 0, 0.05);
   border: 4px solid #9aa5b1;
@@ -39,7 +39,6 @@
   position: relative;
 }
 
-/* დამატებითი ზედა შუქი */
 .train-wagon::before {
   content: '';
   position: absolute;
@@ -53,7 +52,6 @@
   z-index: 1;
 }
 
-/* სათაური */
 .train-wagon h2 {
   text-align: center;
   font-size: 26px;
@@ -63,7 +61,7 @@
   z-index: 2;
 }
 
-/* სავარძლების გრიდი */
+
 .btns {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(70px, 1fr));
@@ -74,11 +72,10 @@
   z-index: 2;
 }
 
-/* სავარძლები */
 .btns button {
   width: 65px;
   height: 65px;
-  border-radius: 20% 20% 40% 40% / 30% 30% 50% 50%; /* სავარძლის ფორმა */
+  border-radius: 20% 20% 40% 40% / 30% 30% 50% 50%; 
   background: linear-gradient(to bottom, #d0d7df, #aebaca);
   border: 2px solid #94a3b8;
   box-shadow: inset 0 -3px 6px rgba(0, 0, 0, 0.15), 0 2px 6px rgba(0, 0, 0, 0.1);
@@ -98,7 +95,7 @@
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
-/* არჩეული სავარძელი */
+
 .btns button.selected {
   background: #4caf50;
   color: white;
@@ -106,7 +103,6 @@
   box-shadow: inset 0 -2px 5px rgba(0, 0, 0, 0.2);
 }
 
-/* მიუწვდომელი სავარძელი */
 .btns button:disabled {
   background-color: #b0b8c1;
   color: #6b7280;
@@ -115,13 +111,12 @@
   opacity: 0.7;
 }
 
-/* ცარიელი სავარძელი */
 .btns button.notSelected {
   background: linear-gradient(to bottom, #e2e8f0, #cbd5e1);
   color: #334155;
 }
 
-/* ბილეთის ყიდვა */
+
 button[routerLink="/tickets"] {
   display: block;
   margin: 0 auto;
@@ -142,7 +137,6 @@ button[routerLink="/tickets"]:hover {
   background-color: #1d4ed8;
 }
 
-/* Responsive */
 @media (max-width: 600px) {
   .btns {
     grid-template-columns: repeat(auto-fill, minmax(50px, 1fr));

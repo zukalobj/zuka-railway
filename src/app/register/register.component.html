@@ -26,10 +26,10 @@
         <h2>მგზავრის რეგისტრაცია</h2>
 
         <input type="text" name="username" [(ngModel)]="form.username" required placeholder="მომხმარებლის სახელი">
-        <input type="email" name="email" [(ngModel)]="form.email" required placeholder="ელ. ფოსტა">
-        <input type="password" name="password" [(ngModel)]="form.password" required placeholder="პაროლი">
+        <input type="email" name="email" [(ngModel)]="phone" required placeholder="ელ. ფოსტა">
+        <input type="password" name="password" [(ngModel)]="password" required placeholder="პაროლი">
 
-        <button type="submit" [disabled]="loading">დარეგისტრირდი</button>
+        <button type="submit" [routerLink]="['/login']" [disabled]="loading">დარეგისტრირდი</button>
       </form>
 
       <div class="message" *ngIf="message">{{ message }}</div>

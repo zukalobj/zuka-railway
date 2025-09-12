@@ -154,7 +154,7 @@
 }
 
 .btn-buy {
-  background-color: #10b981; /* მწვანე */
+  background-color: #10b981;
   color: white;
   border: none;
   padding: 8px 16px;
@@ -169,7 +169,7 @@
 }
 
 .btn-delete {
-  background-color: #ef4444; /* წითელი */
+  background-color: #ef4444; 
   color: white;
   border: none;
   padding: 8px 16px;
@@ -186,8 +186,6 @@
 
 
 
-
-/* Optional: Responsive */
 @media (max-width: 768px) {
   .inputs {
     flex-direction: column;

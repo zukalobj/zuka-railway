@@ -33,8 +33,6 @@ export class LoginComponent {
   //   }
   // }
 
-
-  
   logIn(){
       this.http.postData("https://rentcar.stepprojects.ge/api/Users/login", {
         phoneNumber : this.phone,
@@ -51,4 +49,6 @@ export class LoginComponent {
   }
   }
      
+  
+
 
