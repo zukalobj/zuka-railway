@@ -1,3 +1,5 @@
+<!-- 
+<form (ngSubmit)="logIn()"></form>
 <div class="main">
       <div class="login-wrapper">
     <h1 class="title">მატარებლის სისტემაში შესვლა</h1>
@@ -12,10 +14,39 @@
       <input type="password"  placeholder="••••••••"  [(ngModel)]="password"/>
     </div>
 
-    <button type="submit" class="login-btn" (click)="logIn()">შესვლა</button>
+    <button type="submit" class="login-btn">შესვლა</button>
     
     </div>
 </div>
+ -->
+<form (ngSubmit)="logIn()" #loginForm="ngForm" class="main">
+  <div class="login-wrapper">
+    <h1 class="title">მატარებლის სისტემაში შესვლა</h1>
 
+    <div class="input-group">
+      <label>მომხმარებელი</label>
+      <input
+        type="text"
+        placeholder="მაგ. admin"
+        [(ngModel)]="phone"
+        name="phone"
+        required
+      />
+    </div>
+
+    <div class="input-group">
+      <label>პაროლი</label>
+      <input
+        type="password"
+        placeholder="••••••••"
+        [(ngModel)]="password"
+        name="password"
+        required
+      />
+    </div>
+
+    <button type="submit" class="login-btn">შესვლა</button>
+  </div>
+</form>
 
 

@@ -17,39 +17,45 @@ export class RegisterComponent {
   constructor(private http:ApiService,private router : Router,
               private auth :AuthService
   ) {}
-    phone!:string;
-    password!:string;
-    form = {
-    username: '',
-    email: '',
- 
+
+form = {
+  username: '',
+  email: '',
+  password: ''
 };
-  message: string = '';
-  trafficLightState = 'warning'; // default: yellow
-  loading = false;
- 
- 
-    register(){
-      this.http.postData("https://rentcar.stepprojects.ge/api/Users/register", {
-        phoneNumber : this.phone,
-        password : this.password
-      }).subscribe((resp :any) => {
-           console.log(resp)
-           alert("Loged In Succesfully")
-           localStorage.setItem("token", resp.token)
-           this.auth.logIn()
-           this.router.navigateByUrl("/trips")
- 
-      });
-      setTimeout(()=>{
-         if (this.phone && this.password) {
-         this.trafficLightState = 'success'; // მწვანე – წარმატება
-          this.message = 'რეგისტრაცია წარმატებით დასრულდა!';
-          } else {
-          this.trafficLightState = 'error'; // წითელი – შეცდომა
-          this.message = 'გთხოვ შეავსო ყველა ველი სწორად.';
-          }
-          this.loading = false;
-          }, 1500);
-        }
-      }
+
+trafficLightState = '';
+message = '';
+loading = false;
+
+register() {
+  if (!this.form.email || !this.form.password || !this.form.username) {
+    this.trafficLightState = 'error';
+    this.message = 'გთხოვ შეავსო ყველა ველი სწორად.';
+    return;
+  }
+
+  this.loading = true;
+
+  this.http.postData("https://rentcar.stepprojects.ge/api/Users/register", {
+    phoneNumber: this.form.email, 
+    password: this.form.password
+  }).subscribe({
+    next: (resp: any) => {
+      console.log(resp);
+      alert("რეგისტრაცია წარმატებით დასრულდა");
+      localStorage.setItem("token", resp.token);
+      this.auth.logIn();
+      this.trafficLightState = 'success';
+      this.message = 'რეგისტრაცია წარმატებით დასრულდა!';
+      this.router.navigateByUrl("/trips");
+    },
+    error: (error) => {
+      console.error(error);
+      this.trafficLightState = 'error';
+      this.message = 'რეგისტრაცია ვერ მოხერხდა. სცადე თავიდან.';
+      this.loading = false;
+    }
+  });
+}
+}

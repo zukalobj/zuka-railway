@@ -34,3 +34,10 @@
   <i class="fa-solid fa-check"></i>
   <span *ngIf="isOpen">ბილეთის შემოწმება</span>
 </a>
+
+ <ng-container *ngIf="isLoggedIn">
+    <a class="menu-item" (click)="logout()">
+      <i class="fas fa-sign-out-alt"></i>
+      <span *ngIf="isOpen">გამოსვლა</span>
+    </a>
+  </ng-container>

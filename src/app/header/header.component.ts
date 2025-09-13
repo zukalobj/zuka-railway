@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-import { RouterModule, RouterOutlet } from '@angular/router';
+import { Router, RouterModule, RouterOutlet } from '@angular/router';
+import { AuthService } from '../service/auth.service';
 
 @Component({
   selector: 'app-header',
@@ -10,9 +11,29 @@ import { RouterModule, RouterOutlet } from '@angular/router';
 })
 export class HeaderComponent {
    isOpen = false;
+   isLoggedIn=false;
+    constructor(private auth: AuthService, private router: Router) {}
+
+  ngOnInit(): void {
+    this.checkAuth();
+  }
+  
+
+  
+
+   checkAuth() {
+    this.isLoggedIn = this.auth.isLoggedIn();
+  }
+  
+  logout() {
+    this.auth.logOutTo();
+    this.isLoggedIn = false;
+    this.router.navigate(['/login']);
+  }
 
   toggleSidebar() {
     this.isOpen = !this.isOpen;
   }
+  
 
   }

@@ -3,6 +3,8 @@ import { FormsModule } from '@angular/forms';
 import { ApiService } from '../service/api.service';
 import { CommonModule } from '@angular/common';
 import { ActivatedRoute,Router, RouterModule } from '@angular/router';
+import Swal from 'sweetalert2';
+
  
 @Component({
   selector: 'app-tickets',
@@ -37,10 +39,22 @@ export class TicketsComponent {
   phoneNumber : string = ""
   purchasedTickets: any[] = [];
   ticketId!:number;
+  ticketPrice!:number;
  
-  //  backToPage() {
-  //   this.router.navigate(['/wagon']);
-  // }
+
+
+  goBack(){
+    this.router.navigate(['/trips'])
+  }
+
+  ticketPurchase(){
+  Swal.fire({
+  title: "გადახდა შესრულებულია",
+  icon: "success",
+  draggable: true
+});
+    
+  }
  
  
   postTicket() {
@@ -65,6 +79,7 @@ export class TicketsComponent {
               console.log(this.ticketId);
              
     });  
+
  
  
  
@@ -101,6 +116,7 @@ export class TicketsComponent {
   })
  
  
+  
  
 }
 }

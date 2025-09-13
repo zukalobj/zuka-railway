@@ -5,10 +5,13 @@ import { Component } from '@angular/core';
   imports: [],
   templateUrl: './confirm.component.html',
   styleUrl: './confirm.component.scss'
+  
+
 })
 export class ConfirmComponent {
   
 active: number | null = null;
+ticket: any;
 toggle(index: number) {
   if (this.active === index) {
     this.active = null;

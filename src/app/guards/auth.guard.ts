@@ -12,8 +12,7 @@ export const authGuard: CanActivateFn = (route, state) => {
     router.navigateByUrl('/login');
     Swal.fire({
     icon: "error",
-    title: "First of all",
-    text: "Please Log In",
+    title: "გთხოვთ გაიაროთ ავტორიზაცია",
     footer: '<a href="#">Have not registered yet?</a>'
 });
 
