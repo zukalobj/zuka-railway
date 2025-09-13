@@ -15,6 +15,14 @@ export class ApiService {
     catchError(this.errorHandling)
   )
   }
+
+  deleteData(url:  string){
+  return this.http.delete(url,{ responseType: 'text' }).pipe(
+    catchError(this.errorHandling)
+  )
+  }
+
+  
     postData(url: string, obj: any) {
     return this.http.post(url, obj).pipe(catchError(this.errorHandling));
   }

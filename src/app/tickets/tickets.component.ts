@@ -2,22 +2,24 @@ import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { ApiService } from '../service/api.service';
 import { CommonModule } from '@angular/common';
-import { ActivatedRoute,Router, RouterLink } from '@angular/router';
-
+import { ActivatedRoute,Router, RouterModule } from '@angular/router';
+ 
 @Component({
   selector: 'app-tickets',
-  imports: [FormsModule,CommonModule,RouterLink],
+  imports: [FormsModule,CommonModule,RouterModule],
   templateUrl: './tickets.component.html',
   styleUrl: './tickets.component.scss',
 })
 export class TicketsComponent {
   constructor(private http: ApiService,
-    private router: RouterLink,
+    private router: Router,
      private rout: ActivatedRoute
-  ) {}
-  
-
-  
+  ) {
+   
+  }
+ 
+ 
+ 
   ngOnInit() {
     if (localStorage.getItem('selectedSeats')) {
       const selectedSeats = localStorage.getItem('selectedSeats');
@@ -27,20 +29,20 @@ export class TicketsComponent {
     this.trainId = localStorage.getItem('selectedTrain') || null;
     console.log(this.seats);
   }
-
+ 
   date!: string | null;
   trainId!: string | null;
   seats: any[] = [];
   email : string = ""
   phoneNumber : string = ""
-  purchasedTickets: any[] = []; 
+  purchasedTickets: any[] = [];
   ticketId!:number;
-
+ 
   //  backToPage() {
   //   this.router.navigate(['/wagon']);
   // }
-
-
+ 
+ 
   postTicket() {
     console.log(this.seats);
     this.http.postDataTypeText('https://railway.stepprojects.ge/api/tickets/register', {
@@ -59,27 +61,16 @@ export class TicketsComponent {
        localStorage.removeItem("selectedSeats")
            localStorage.removeItem("selectedDate")
                localStorage.removeItem("selectedTrain")
+              this.ticketId = resp.split(":")[1]
+              console.log(this.ticketId);
+             
     });  
-
-
-
-  // deleteTicketInfo() {
-  // if (!confirm('ნამდვილად გსურთ ბილეთის წაშლა?')) return;
-  // this.http.delete(`https://railway.stepprojects.ge/api/tickets/cancel${ticketId}`).subscribe({
-  //   next: () => {
-  //     // თუ წარმატებით წაიშალა სერვერზე, ადგილობრივ სიიდან ამოღებ
-  //     this.purchasedTickets.splice(index []);
-  //     localStorage.setItem('purchasedTickets', JSON.stringify(this.purchasedTickets));
-  //     alert('ბილეთი წარმატებით წაიშალა');
-  //   },
-  //   error: (err) => {
-  //     console.error('წაშლის შეცდომა:', err);
-  //     alert('ბილეთის წაშლა ვერ მოხერხდა');
-  //   }
-  // });
-
+ 
+ 
+ 
+ 
     //
-
+ 
     //   {
     //   "trainId": 0,
     //   "date": "2025-09-11T09:48:00.044Z",
@@ -97,5 +88,19 @@ export class TicketsComponent {
     //   ]
     // }
   }
+ 
+ 
+  deleteTicketInfo() {
+ 
+   
+  if (!confirm('ნამდვილად გსურთ ბილეთის წაშლა?')) return;
+  this.http.deleteData(`https://railway.stepprojects.ge/api/tickets/cancel/${this.ticketId}`)
+  .subscribe((resp:any) => {
+    alert(resp)
+    this.router.navigateByUrl('/trips')
+  })
+ 
+ 
+ 
 }
-
+}

@@ -3,17 +3,17 @@ import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { AuthService } from '../service/auth.service';
 import { ApiService } from '../service/api.service';
-import { Router } from '@angular/router';
-import { RouterLink } from "../../../node_modules/@angular/router/router_module.d-Bx9ArA6K";
-
+import { Router, RouterModule } from '@angular/router';
+ 
+ 
 @Component({
   selector: 'app-register',
-  imports: [CommonModule, FormsModule, RouterLink],
+  imports: [CommonModule, FormsModule, RouterModule],
   templateUrl: './register.component.html',
   styleUrl: './register.component.scss'
 })
 export class RegisterComponent {
-
+ 
   constructor(private http:ApiService,private router : Router,
               private auth :AuthService
   ) {}
@@ -22,13 +22,13 @@ export class RegisterComponent {
     form = {
     username: '',
     email: '',
-
+ 
 };
   message: string = '';
   trafficLightState = 'warning'; // default: yellow
   loading = false;
-
-
+ 
+ 
     register(){
       this.http.postData("https://rentcar.stepprojects.ge/api/Users/register", {
         phoneNumber : this.phone,
@@ -39,7 +39,7 @@ export class RegisterComponent {
            localStorage.setItem("token", resp.token)
            this.auth.logIn()
            this.router.navigateByUrl("/trips")
-
+ 
       });
       setTimeout(()=>{
          if (this.phone && this.password) {
