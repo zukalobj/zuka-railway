@@ -193,9 +193,65 @@
 
   .inputs input {
     width: 100%;
+    flex: 1 1 100%;
   }
 
   .booking-form-container {
     padding: 24px;
   }
+
+  .train-ticket {
+    flex-direction: column;
+  }
+
+  .ticket-left {
+    border-right: none;
+    border-bottom: 2px dashed #ccc;
+  }
+
+  .ticket-right {
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 16px;
+  }
+
+  .train-icon {
+    font-size: 28px;
+    margin: 0;
+  }
+
+  .btn-buy,
+  .btn-delete {
+    margin: 0 4px;
+    padding: 8px 12px;
+    font-size: 14px;
+  }
+
+  .route {
+    font-size: 18px;
+    text-align: center;
+  }
+
+  .date,
+  .times,
+  .ticket-id,
+  .passenger {
+    text-align: center;
+  }
+
+  .purchased-tickets {
+    padding: 12px;
+    margin: 20px auto;
+  }
+}
+@media (max-width: 408px) {
+  .btn-buy,
+  .btn-delete {
+    margin: 0 4px;
+    padding-top: 20px;
+    font-size: 14px;
+    width: 30px;
+    height: 30px;
+  }
+
 }

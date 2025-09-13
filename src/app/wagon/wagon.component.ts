@@ -38,6 +38,7 @@ export class WagonComponent {
       console.log(this.vagonId);
     });
     
+    
   }
 
   vagonId!: number;
@@ -63,7 +64,7 @@ export class WagonComponent {
       });
     }
 
-    localStorage.setItem('selectedSeats', JSON.stringify(this.selecSeats));
+    localStorage.setItem('selectedSeats', JSON.stringify(this.selecSeats))
   }
     isSeatSelected(seatId: string): boolean {
     return this.selecSeats.some(seat => seat.seatId === seatId);
@@ -86,3 +87,7 @@ export class WagonComponent {
   }
   trainArr: Train[] = [];
 }
+function generateSeatRows() {
+  throw new Error('Function not implemented.');
+}
+
