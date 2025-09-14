@@ -6,6 +6,7 @@ import { ApiService } from '../service/api.service';
 import { Router } from '@angular/router';
 import {AuthService} from '../service/auth.service';
 import { RouterLink } from "../../../node_modules/@angular/router/router_module.d-Bx9ArA6K";
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-login',
@@ -60,14 +61,22 @@ logIn() {
   }).subscribe({
     next: (resp: any) => {
       console.log(resp);
-      alert("შესვლა წარმატებით შესრულდა");
+      Swal.fire({
+      title: "შესვლა წარმატებით შესრულდა!",
+      icon: "success",
+      draggable: true
+});
       localStorage.setItem("token", resp.token);
       this.auth.logIn();
       this.router.navigateByUrl("/trips");
     },
     error: (err) => {
       console.error(err);
-      alert("შესვლა ვერ მოხერხდა. შეამოწმეთ მონაცემები.");
+      Swal.fire({
+      title: "შესვლა ვერ მოხერხდა.",
+      text: "შეამოწმეთ მონაცემები.",
+      icon: "question"
+});
     }
   });
 }

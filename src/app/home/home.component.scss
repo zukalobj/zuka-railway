@@ -162,6 +162,9 @@
   background-color: #007bff;
 }
 
+
+
+
 @media (max-width: 768px) {
   .hero-content h1 {
     font-size: 2.2rem;
@@ -174,6 +177,9 @@
   .cta-btn {
     padding: 10px 24px;
     font-size: 1rem;
+  }
+  .carousel-title{
+    font-size: 18px;
   }
 }
 
@@ -190,9 +196,5 @@
     width: 100%;
     padding: 10px 20px;
     font-size: 0.95rem;
-  }
-
-  .benefits-section {
-    padding: 30px 10px;
   }
 }
