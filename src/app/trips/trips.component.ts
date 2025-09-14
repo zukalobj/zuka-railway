@@ -13,7 +13,7 @@ import { Train } from '../models/train';
 
 @Component({
   selector: 'app-trips',
-  imports: [CommonModule,FormsModule,RouterLink],
+  imports: [CommonModule,FormsModule],
   standalone:true,
   templateUrl: './trips.component.html',
   styleUrl: './trips.component.scss'

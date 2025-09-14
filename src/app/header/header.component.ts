@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
 import { Router, RouterModule, RouterOutlet } from '@angular/router';
 import { AuthService } from '../service/auth.service';
 
@@ -11,14 +11,25 @@ import { AuthService } from '../service/auth.service';
 })
 export class HeaderComponent {
    isOpen = false;
+    isMobile = false;
    isLoggedIn=false;
     constructor(private auth: AuthService, private router: Router) {}
 
   ngOnInit(): void {
     this.checkAuth();
+    this.checkScreenSize();
   }
   
 
+  @HostListener('window:resize')
+  onResize() {
+    this.checkScreenSize();
+  }
+
+  checkScreenSize() {
+    this.isMobile = window.innerWidth <= 768;
+    this.isOpen = !this.isMobile;  
+  }
   
 
    checkAuth() {

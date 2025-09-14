@@ -195,8 +195,9 @@
   margin-top: auto;
   background-color: #0056b3;
   padding: 6px 8px;
+  min-height: 5vh;
   border-radius: 6px;
-  font-size: 11px;
+  font-size: 15px;
   text-align: center;
   color: #ffdd57;
   font-weight: bold;
@@ -290,5 +291,63 @@
     width: 30px;
     height: 30px;
   }
+  @media (max-width: 410px) {
+  .inputs {
+    flex-direction: column;
+  }
+
+  .inputs input {
+    width: 100%;
+    flex: 1 1 100%;
+  }
+
+  .booking-form-container {
+    padding: 24px;
+  }
+
+  .train-ticket {
+    flex-direction: column;
+  }
+
+  .ticket-left {
+    border-right: none;
+    border-bottom: 2px dashed #ccc;
+  }
+
+  .ticket-right {
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 16px;
+  }
+
+  .train-icon {
+    font-size: 28px;
+    margin: 0;
+  }
+
+  .btn-buy,
+  .btn-delete {
+    margin: 0 4px;
+    padding: 8px 12px;
+    font-size: 0px
+  }
+
+  .route {
+    font-size: 18px;
+    text-align: center;
+  }
+
+  .date,
+  .times,
+  .ticket-id,
+  .passenger {
+    text-align: center;
+  }
+
+  .purchased-tickets {
+    padding: 12px;
+    margin: 20px auto;
+  }
+}
 
 }
