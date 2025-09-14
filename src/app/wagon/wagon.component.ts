@@ -66,6 +66,7 @@ export class WagonComponent {
 
     localStorage.setItem('selectedSeats', JSON.stringify(this.selecSeats))
   }
+  
     isSeatSelected(seatId: string): boolean {
     return this.selecSeats.some(seat => seat.seatId === seatId);
   }
