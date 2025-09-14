@@ -137,6 +137,7 @@ button[routerLink="/tickets"]:hover {
   background-color: #1d4ed8;
 }
 
+
 @media (max-width: 600px) {
   .btns {
     grid-template-columns: repeat(auto-fill, minmax(50px, 1fr));

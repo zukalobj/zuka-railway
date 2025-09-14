@@ -8,7 +8,7 @@
     </div>
   </div>
 </section>
-<section class="benefits-section">
+<!-- <section class="benefits-section">
   <div class="benefit">
     <i class="fas fa-clock"></i>
     <h3>დროის დაზოგვა</h3>
@@ -23,5 +23,27 @@
     <i class="fas fa-shield-alt"></i>
     <h3>უსაფრთხოება</h3>
     <p>დაჯავშნა დაცულ სისტემაში</p>
+  </div> -->
+  <div class="carousel-container">
+  <h2 class="carousel-title">ჩვენი რეისები</h2>
+  
+  <div class="carousel">
+    <button class="nav-btn prev" (click)="prev()">&#10094;</button>
+
+    <div class="image-wrapper">
+      <img [src]="images[currentIndex].src" [alt]="images[currentIndex].alt" />
+      <div class="label">{{ images[currentIndex].label }}</div>
+    </div>
+
+    <button class="nav-btn next" (click)="next()">&#10095;</button>
   </div>
-</section>
+
+  <div class="indicators">
+    <span *ngFor="let img of images; let i = index"
+          [class.active]="i === currentIndex"
+          (click)="currentIndex = i"></span>
+  </div>
+</div>
+
+
+<!-- </section> -->

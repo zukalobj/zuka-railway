@@ -1,3 +1,20 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html,body{
+   margin: 0;
+  padding: 0;
+  height: 100%;
+}
+.main-cover{
+  background: url('https://i.guim.co.uk/img/media/1ba3cc33b02514682158fa28fb468b491f082e08/389_681_3968_2381/master/3968.jpg?width=1200&height=900&quality=85&auto=format&fit=crop&s=3bc5011885a6a7cfaaa3f23b44cf29f5') no-repeat center center;
+  background-size: cover;
+  padding: 20px;
+  margin: 0;
+}
+
 .info-banner {
   background-color: #007bff;
   color: white;
@@ -14,6 +31,20 @@
   flex-wrap: wrap;
 }
 
+.info-banner-2 {
+  background-color: #fef3c7; 
+  color: #92400e;
+  padding: 10px 20px;
+  border-left: 6px solid #0e68b3; 
+  border-radius: 8px;
+  font-size: 15px;
+  line-height: 1.6;
+  margin: 0 auto 40px auto;
+  max-width: 1000px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+
 .info-item {
   display: flex;
   align-items: center;
@@ -25,7 +56,7 @@
 }
 
 .booking-form {
-  background: #f9fafb;
+  background: #246eb966;
   padding: 30px;
   border-radius: 12px;
   box-shadow: 0 0 15px rgba(0,0,0,0.1);
@@ -89,8 +120,6 @@
   background-color: #27ae60;
 }
 .booking-form {
-  background: url('https://images.unsplash.com/photo-1592844002373-a55ecd7af140?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8aW5kaWFuJTIwcmFpbHdheXxlbnwwfHwwfHx8MA%3D%3D') no-repeat center center;
-  background-size: cover;
   padding: 30px;
   border-radius: 12px;
   box-shadow: 0 0 15px rgba(0,0,0,0.1);
@@ -386,6 +415,8 @@
   width: 100%;
   max-width: 380px;
 }
+
+
 @media (max-width: 1024px) {
   .accordion,
   .ticket-accordion {

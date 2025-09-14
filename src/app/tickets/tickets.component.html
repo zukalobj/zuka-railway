@@ -1,4 +1,10 @@
 
+
+  <div class="discount-box">
+    🎁 <strong>-20%</strong> პირველ გადახდაზე!
+  </div>
+
+
 <div class="booking-form-container">
   <h3>საკონტაქტო ინფორმაცია</h3>
   <input type="text" name="" id="" placeholder="ტელეფონის ნომერი" [(ngModel)]="phoneNumber">
@@ -16,6 +22,33 @@
   <button class="back" (click)="goBack()"  >უკან დაბრუნება</button>
  
 </div>
+<section class="benefits-section">
+  <div class="benefit">
+    <i class="fa-solid fa-money-bill-wave"></i>
+    <h3>გადახდის მეთოდები</h3>
+      <div class="payment-method">
+    <img src="https://download.logo.wine/logo/Mastercard/Mastercard-Logo.wine.png" alt="Zmatser" />
+    <span>Matser</span>
+  </div>
+     <div class="payment-method">
+    <img src="https://download.logo.wine/logo/Visa_Inc./Visa_Inc.-Logo.wine.png" alt="Visa" />
+    <span>Visa</span>
+  </div>
+    <div class="payment-method">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRD4IZwz7bJ8wqn5j6xil0Pmpx1cEPARqvxFQ&s" alt="Amex" />
+    <span>Amex</span>
+  </div>
+  </div>
+  <div class="benefit">
+    <i class="fas fa-route"></i>
+    <h3>მრავალფეროვანი მარშრუტები</h3>
+    <p>სადაც არ უნდა მიდიოდე – ჩვენ დაგეხმარებით</p>
+  </div>
+  <div class="benefit">
+    <i class="fas fa-shield-alt"></i>
+    <h3>უსაფრთხოება</h3>
+    <p>დაჯავშნა დაცულ სისტემაში</p>
+  </div>
  
 <div class="purchased-tickets" *ngIf="purchasedTickets.length">
   <h2>თქვენი ბილეთები</h2>

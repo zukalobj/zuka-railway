@@ -20,7 +20,6 @@ import { Train } from '../models/train';
 })
 export class TripsComponent {
 
-
     fromDate: string = '';
     toDate: string = '';
     selectedDate: any;
@@ -60,6 +59,7 @@ toggle(index: number) {
     this.active = index;
   }
 }
+
   getTrains(){
     this.http.getData(`https://railway.stepprojects.ge/api/getdeparture?from=${this.from}&to=${this.to}&date=${this.dateSelect}`)
     .subscribe((resp : any)=>{
