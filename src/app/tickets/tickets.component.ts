@@ -79,35 +79,26 @@ export class TicketsComponent {
               console.log(this.ticketId);
              
     });  
-
- 
- 
- 
- 
-    //
- 
-    //   {
-    //   "trainId": 0,
-    //   "date": "2025-09-11T09:48:00.044Z",
-    //   "email": "string",
-    //   "phoneNumber": "string",
-    //   "people": [
-    //     {
-    //       "seatId": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
-    //       "name": "string",
-    //       "surname": "string",
-    //       "idNumber": "string",
-    //       "status": "string",
-    //       "payoutCompleted": true
-    //     }
-    //   ]
-    // }
   }
- 
- 
-  deleteTicketInfo() {
- 
+
    
+
+  confirmTicketInfo(){
+     if(!confirm('გსურთ დაადასტუროთ ბილეთი?'))return;
+    this.http.getData(`https://railway.stepprojects.ge/api/tickets/confirm/${this.ticketId}`)
+    .subscribe((resp:any) =>{
+      alert(resp)
+        Swal.fire({
+        title: "თქვენ წარმატებით შეიძინეთ ბილეთი",
+        icon: "success",
+        draggable: true
+});
+
+  }
+)
+}
+
+  deleteTicketInfo() {
   if (!confirm('ნამდვილად გსურთ ბილეთის წაშლა?')) return;
   this.http.deleteData(`https://railway.stepprojects.ge/api/tickets/cancel/${this.ticketId}`)
   .subscribe((resp:any) => {

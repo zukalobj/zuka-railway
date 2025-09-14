@@ -8,7 +8,8 @@ export class AuthService {
   constructor() { }
 
 
-  isAuth = signal(false);
+  // isAuth = signal(false);
+    isAuth = signal(!!localStorage.getItem('token'));
 
 
   logIn(){
@@ -28,6 +29,7 @@ export class AuthService {
 
   logOutTo(): void {
     localStorage.removeItem('token');
+    this.logOut()
   }
 
 

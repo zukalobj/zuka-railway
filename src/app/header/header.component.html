@@ -1,37 +1,37 @@
-
- 
 <div class="sidebar" [class.open]="isOpen">
   <div class="menu-item toggle" (click)="toggleSidebar()">
-    <i class="fas fa-bars" ></i>
+    <i class="fas fa-bars"></i>
     <span *ngIf="isOpen">მენიუ</span>
   </div>
 
+  <a class="menu-item" routerLink="/home" routerLinkActive="active">
+    <i class="fas fa-train"></i>
+    <span *ngIf="isOpen">გამგზავრება</span>
+  </a>
 
-<a class="menu-item" routerLink="/home" routerLinkActive="active">
-  <i class="fas fa-train"></i>
-  <span *ngIf="isOpen">გამგზავრება</span>
-</a>
+  <ng-container *ngIf="!auth.isAuth()">
+    <a class="menu-item" routerLink="/login" routerLinkActive="active">
+      <i class="fas fa-sign-in-alt"></i>
+      <span *ngIf="isOpen">შესვლა</span>
+    </a>
 
-<a class="menu-item" routerLink="/login" routerLinkActive="active">
-  <i class="fas fa-sign-in-alt"></i>
-  <span *ngIf="isOpen">შესვლა</span>
-</a>
+    <a class="menu-item" routerLink="/register" routerLinkActive="active">
+      <i class="fas fa-user-plus"></i>
+      <span *ngIf="isOpen">რეგისტრაცია</span>
+    </a>
+  </ng-container>
 
-<a class="menu-item" routerLink="/tickets" routerLinkActive="active">
-  <i class="fa-solid fa-ticket"></i>
-  <span *ngIf="isOpen">ბილეთები</span>
-</a>
-<a class="menu-item" routerLink="/register" routerLinkActive="active">
-  <i class="fas fa-user-plus"></i>
-  <span *ngIf="isOpen">რეგისტრაცია</span>
-</a>
+  <a class="menu-item" routerLink="/tickets" routerLinkActive="active">
+    <i class="fa-solid fa-ticket"></i>
+    <span *ngIf="isOpen">ბილეთები</span>
+  </a>
 
-<a class="menu-item" routerLink="/trips" routerLinkActive="active">
-  <i class="fa-solid fa-map-location-dot"></i>
-  <span *ngIf="isOpen">ბილეთის ძებნა</span>
-</a>
+  <a class="menu-item" routerLink="/trips" routerLinkActive="active">
+    <i class="fa-solid fa-map-location-dot"></i>
+    <span *ngIf="isOpen">ბილეთის ძებნა</span>
+  </a>
 
- <ng-container *ngIf="isLoggedIn">
+  <ng-container *ngIf="auth.isAuth()">
     <a class="menu-item" (click)="logout()">
       <i class="fas fa-sign-out-alt"></i>
       <span *ngIf="isOpen">გამოსვლა</span>
@@ -40,19 +40,27 @@
 
   <!-- მობ ვერსია მარჯვნივ -->
   <div *ngIf="isMobile" class="mobile-icon-menu" [class.open]="isOpen">
-  <a class="icon-item" routerLink="/home">
-    <i class="fas fa-train"></i>
-  </a>
-  <a class="icon-item" routerLink="/login">
-    <i class="fas fa-sign-in-alt"></i>
-  </a>
-  <a class="icon-item" routerLink="/trips">
-    <i class="fa-solid fa-map-location-dot"></i>
-  </a>
-  <a class="icon-item" routerLink="tickets routerLinkActive">
-    <i class="fa-solid fa-ticket"></i>
-  </a>
-  <a class="icon-item" routerLink="/register" routerLinkActive="active">
-  <i class="fas fa-user-plus"></i>
-  </a>
+    <a class="icon-item" routerLink="/home">
+      <i class="fas fa-train"></i>
+    </a>
+    <a *ngIf="!auth.isAuth()" class="icon-item" routerLink="/login">
+      <i class="fas fa-sign-in-alt"></i>
+    </a>
+
+    <a *ngIf="auth.isAuth()" class="icon-item" (click)="logout()">
+      <i class="fas fa-sign-out-alt"></i>
+    </a>
+
+    <a class="icon-item" routerLink="/trips">
+      <i class="fa-solid fa-map-location-dot"></i>
+    </a>
+
+    <a class="icon-item" routerLink="/tickets" routerLinkActive="active">
+      <i class="fa-solid fa-ticket"></i>
+    </a>
+
+    <a *ngIf="!auth.isAuth()" class="icon-item" routerLink="/register" routerLinkActive="active">
+      <i class="fas fa-user-plus"></i>
+    </a>
+  </div>
 </div>

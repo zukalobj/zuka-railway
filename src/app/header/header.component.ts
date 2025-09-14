@@ -13,7 +13,7 @@ export class HeaderComponent {
    isOpen = false;
     isMobile = false;
    isLoggedIn=false;
-    constructor(private auth: AuthService, private router: Router) {}
+    constructor(protected auth: AuthService, private router: Router) {}
 
   ngOnInit(): void {
     this.checkAuth();
@@ -40,6 +40,7 @@ export class HeaderComponent {
     this.auth.logOutTo();
     this.isLoggedIn = false;
     this.router.navigate(['/login']);
+    localStorage.removeItem('token')
   }
 
   toggleSidebar() {
